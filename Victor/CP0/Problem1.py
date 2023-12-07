@@ -1,5 +1,5 @@
-# Write a program that counts down from a minute in decrements of 10 seconds using a for loop. 
-# The output of the program, when hitting the Run button, should be the following:
+''' wWite a program following the "main pattern" where main() will
+    output a 60 second countdown.'''
 
 def one_minute_countdown():
     print('One minute countdown')
