@@ -5,10 +5,10 @@ def fibonacci( int ):
     num1, num2 = 0, 1
     while(num1 < int):
         num1, num2 = num2, num1 + num2
-    print(num2)
+    return num2
 
 def main():
-    fibonacci(2)
+    print(fibonacci(2))
     
 if(__name__ == '__main__'): 
     main()
