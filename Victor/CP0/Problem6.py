@@ -4,6 +4,6 @@
    
 def count_votes( votes ):
    list = [0,0,0]
-   for i in range(len(votes)):
-      list[votes[i]] += 1
+   for i in votes:
+      list[i] += 1
    return list
