@@ -3,8 +3,8 @@ def find_range(rng_list):
 
 
 def main():
-    print(find_range([12, 17, 6]))
-    print(find_range([2, 3, 4]))
+    find_range([12, 17, 6])
+    find_range([2, 3, 4])
 
 
 if __name__ == "__main__":
