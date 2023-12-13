@@ -8,8 +8,8 @@ def switch_pairs(pair):
 
 
 def main():
-    print(switch_pairs("example"))  # "xemalpe"
-    print(switch_pairs("hello there"))  # "ehll ohtree"
+    switch_pairs("example")  # "xemalpe"
+    switch_pairs("hello there")  # "ehll ohtree"
 
 
 if __name__ == "__main__":
