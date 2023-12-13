@@ -8,8 +8,9 @@ def switch_pairs(pair):
 
 
 def main():
-    switch_pairs("example")  # "xemalpe"
-    switch_pairs("hello there")  # "ehll ohtree"
+    # if condition returns True, then nothing happens
+    assert switch_pairs("example") == "xemalpe"  # "xemalpe"
+    assert switch_pairs("hello there") == "ehll ohtree"  # "ehll ohtree"
 
 
 if __name__ == "__main__":

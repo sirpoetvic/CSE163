@@ -1,3 +1,4 @@
+
 def count_votes(voting_results):
     canidates = [0, 0, 0]
     for i in voting_results:
