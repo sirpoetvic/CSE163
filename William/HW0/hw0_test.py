@@ -33,8 +33,8 @@ def test_swip_swap():
     assert hw0.swip_swap('foobar', 'b', 'c') == 'foocar'
     assert hw0.swip_swap('foobar', 'z', 'c') == 'foobar'
     # At least two should be new examples you make up
-    assert hw0.swip_swap('foobar', 'b', 'c') == 'foocar'
-    assert hw0.swip_swap('foobar', 'z', 'c') == 'foobar'
+    assert hw0.swip_swap('foobar', 'b', 'o') == 'fbboar'
+    assert hw0.swip_swap('foobar', 'b', 'r') == 'foorab'
 
 
 def main():
