@@ -5,10 +5,6 @@ Remember to import all modules/functions when testing!
 
 import hw0
 
-"""
-Note to William: Reformat to assert_equals() formatting
-"""
-
 
 def test_funky_sum():
     # Makes at least 4 calls to assert_equals
@@ -23,10 +19,9 @@ def test_funky_sum():
 
 def test_total():
     # Testing total
-    #
     assert hw0.total(5) == 15
     assert hw0.total(10) == 55
-    assert hw0.total(-1) is None
+    assert hw0.total(-1) == "None"
 
 
 def test_swip_swap():

@@ -39,7 +39,7 @@ def total(n):
     """
     total = 0
     if n < 0:
-        return None
+        return "None"
     else:
         for i in range(n+1):
             total = i + total
@@ -58,4 +58,12 @@ def swip_swap(source, c1, c2):
         c1 (char)
         c2 (char)
     """
-
+    str_together = ''
+    for i in source:
+        if i == c1:
+            str_together += c2
+        elif i == c2:
+            str_together += c1
+        else:
+            str_together += i
+    return str_together
