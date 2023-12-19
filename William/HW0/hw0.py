@@ -19,10 +19,13 @@ def funky_sum(a, b, mix):
         A number to determine the ratio from a and b
         Described as a "slider" for how much to use a and b
     """
-    if mix < 0:
+    # If mix is negative or 0, return a
+    if mix <= 0:
         return a
+    # If mix is bigger or equal to 1, return b
     elif mix >= 1:
         return b
+    # In between 0 and 1 returns whats in the formula below
     elif 0 <= mix <= 1:
         # Getting a floating value error, so im going to round it using round()
         round_num = (1-mix) * a + mix * b
@@ -38,8 +41,10 @@ def total(n):
         n (int): number to manipulate
     """
     total = 0
+    # If n is negative, returns None
     if n < 0:
-        return "None"
+        return None
+    # Sums the integers, inclusive
     else:
         for i in range(n+1):
             total = i + total
@@ -60,8 +65,10 @@ def swip_swap(source, c1, c2):
     """
     str_together = ''
     for i in source:
+        # Value at index i, if c1 equals it, then replace with c2
         if i == c1:
             str_together += c2
+        # Value at index i, if c2 equals it, then replace with c1
         elif i == c2:
             str_together += c1
         else:
