@@ -1,1 +1,0 @@
-# shakiness_by_location
