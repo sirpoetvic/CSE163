@@ -13,8 +13,6 @@ def count_unique_words(file_name):
         for line in lines:
             tokens = line.split()
             for i in tokens:
-                if i in unique_words:
-                    continue
-                else:
+                if i not in unique_words:
                     unique_words.append(i)
     return unique_words
