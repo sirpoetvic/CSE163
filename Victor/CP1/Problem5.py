@@ -7,4 +7,7 @@ codes of a list of phone numbers"""
 
 
 def area_codes(phone_list):
-    return set(phone_list[i][:3] for i in phone_list)
+    return set([phone[:3] for phone in phone_list])
+
+
+print(area_codes(["123-456-7890", "206-123-45676", "123-000-0000", "425-999-9999"]))
