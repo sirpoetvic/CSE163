@@ -3,7 +3,7 @@
 # https://cse163.github.io/book/module-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list.html
 
 
-"""Returns all number divisible by 2 AND 5 in a list"""
+"""Returns all number divisible by 2 OR 5 in a list"""
 
 
 def fun_numbers(start, stop):
