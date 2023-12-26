@@ -10,9 +10,9 @@ def most_frequent(counts):
 
     If the given dict is empty, returns None.
     """
-    max_word, max_num = "", 0
     if not counts:
         return None
+    max_word, max_num = "", 0
     for word in counts.items():
         if word[1] > max_num:
             max_word = word[0]
