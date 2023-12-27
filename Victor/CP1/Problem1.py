@@ -3,21 +3,18 @@
 # https://cse163.github.io/book/module-2-data-structures-and-files/lesson-4-lists-and-files/practice-build-a-list.html
 
 
-"""Returns all number divisible by 2 OR 5 in a list"""
-
-
 def fun_numbers(start, stop):
-    """_summary_
+    """Returns all numbers divisible by 2 or 5 in a list
 
     Args:
-        start (int): _description_
-        stop (int): _description_
+        start (int): start number
+        stop (int): end number
 
     Returns:
-        _type_: _description_
+        list: all numbers divisible by 2 or 5 in range start to stop
     """
-    list = []
+    return_list = []
     for i in range(start, stop):
         if i % 2 == 0 or i % 5 == 0:
-            list.append(i)
-    return list
+            return_list.append(i)
+    return return_list

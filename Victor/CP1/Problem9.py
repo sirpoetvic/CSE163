@@ -4,6 +4,15 @@
 
 
 def shakiness_by_location(data):
+    """Returns a dictionary of total magnitude per location
+
+    Args:
+        data (list): list of dictionaries showing name and
+        magnitude of earthquakes
+
+    Returns:
+        dictionary: dictionary of total magnitude per location
+    """
     if len(data) == 0:
         return {}
     earthquake_dictionary = {}

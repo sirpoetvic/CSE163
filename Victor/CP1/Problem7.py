@@ -4,13 +4,15 @@
 
 
 def most_frequent(counts):
-    """
-    Returns the word with the highest count. The input is a dict
+    """Returns the word with the highest count. The input is a dict
     with keys that are words and values that are counts.
     If the given dict is empty, returns None.
 
+    Args:
+        counts (dict): dictionary containing words and frequency
+
     Returns:
-        String: Most frequent word
+        str: most frequent word
     """
     if not counts:
         return None
@@ -20,3 +22,13 @@ def most_frequent(counts):
             max_word = word[0]
             max_num = word[1]
     return max_word
+
+
+"""
+    Returns the word with the highest count. The input is a dict
+    with keys that are words and values that are counts.
+    If the given dict is empty, returns None.
+
+    Returns:
+        String: Most frequent word
+    """

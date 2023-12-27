@@ -7,8 +7,16 @@
 
 
 def count_unique_words(file_name):
+    """Returns all unique words from a file
+
+    Args:
+        file_name (txt file): file
+
+    Returns:
+        list: list of unique words from file
+    """
     unique_words = []
-    with open(file_name) as f:
+    with open(file_name, encoding="r") as f:
         lines = f.readlines()
         for line in lines:
             tokens = line.split()

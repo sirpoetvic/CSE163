@@ -4,16 +4,18 @@
 
 
 def count_words(file_name):
-    """_summary_
+    """Returns a dictionary denoting how many times
+    each word occurs in a file
 
     Args:
-        file_name (.txt):
+        file_name (txt file): file
 
     Returns:
-        _type_: _description_
+        dictionary: dictionary with words and number
+        of respective occurences
     """
     dictionary = {}
-    with open(file_name) as f:
+    with open(file_name, encoding="r") as f:
         lines = f.readlines()
         for line in lines:
             tokens = line.split()

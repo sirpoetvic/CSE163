@@ -6,8 +6,12 @@
 def largest_earthquake(data):
     """Returns largest magnitude of earthquake list of dictionaries
 
+    Args:
+        data (dictionary): dictionary containing earthquake data
+
     Returns:
-        String: Name of place with largest magnitude earthquake"""
+        String: Name of place with largest magnitude earthquake
+    """
     if len(data) == 0:
         return None
     l_mag, name = 0, ""
