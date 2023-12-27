@@ -4,6 +4,14 @@
 
 
 def count_words(file_name):
+    """_summary_
+
+    Args:
+        file_name (.txt):
+
+    Returns:
+        _type_: _description_
+    """
     dictionary = {}
     with open(file_name) as f:
         lines = f.readlines()

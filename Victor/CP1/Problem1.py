@@ -7,6 +7,15 @@
 
 
 def fun_numbers(start, stop):
+    """_summary_
+
+    Args:
+        start (int): _description_
+        stop (int): _description_
+
+    Returns:
+        _type_: _description_
+    """
     list = []
     for i in range(start, stop):
         if i % 2 == 0 or i % 5 == 0:

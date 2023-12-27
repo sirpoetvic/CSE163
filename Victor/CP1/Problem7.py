@@ -7,8 +7,10 @@ def most_frequent(counts):
     """
     Returns the word with the highest count. The input is a dict
     with keys that are words and values that are counts.
-
     If the given dict is empty, returns None.
+
+    Returns:
+        String: Most frequent word
     """
     if not counts:
         return None

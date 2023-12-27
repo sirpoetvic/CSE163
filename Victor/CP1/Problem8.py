@@ -2,10 +2,17 @@
 
 # https://cse163.github.io/book/module-2-data-structures-and-files/lesson-6-csv-data/practice-largest-earthquake.html
 
-import cse163_utils
-
 
 def largest_earthquake(data):
+    """Returns largest magnitude of earthquake list of dictionaries
+
+    Returns:
+        String: Name of place with largest magnitude earthquake"""
     if len(data) == 0:
         return None
-    return csv.
+    l_mag, name = 0, ""
+    for dictionary in data:
+        if dictionary["name"] != name and dictionary["magnitude"] > l_mag:
+            name = dictionary["name"]
+            l_mag = dictionary["magnitude"]
+    return name
