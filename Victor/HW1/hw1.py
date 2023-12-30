@@ -1,7 +1,7 @@
 """
-<name>
-<period>
-<file description>
+Victor Wong
+Period 5
+HW1 assignment
 """
 # do not import math
 
@@ -50,6 +50,19 @@ def is_relatively_prime(n, m):
 
 
 def travel(directions, x, y):
+    """Adjusts (x, y) coordinates based on the string directions.
+    "n", "s", "w", and "e" upper/lower are all move the coordinates
+    in their respective direction
+
+    Args:
+        directions (string): string containing n, s, w, e, and
+        other non-adjusting chars
+        x (int): x-coordinate
+        y (int): y-coordinate
+
+    Returns:
+        (x, y): adjusted coordinates
+    """
     for i in directions.lower():
         if i == "n":
             y += 1
@@ -63,6 +76,17 @@ def travel(directions, x, y):
 
 
 def reformat_date(date, current_date_format, target_date_format):
+    """Reformats the given date, from the current date format to a
+    target date format
+
+    Args:
+        date (string): a combination of day, year, month, in any order, separated by "/"
+        current_date_format (string): a combination of letters D, Y, M, in any order, separated by "/"
+        target_date_format (string): a combination of letters D, Y, M, in any order, separated by "/"
+
+    Returns:
+        _type_: _description_
+    """
     return_date = ""
     date_letters = current_date_format.split("/")
     target_date_letters = target_date_format.split("/")
@@ -76,6 +100,15 @@ def reformat_date(date, current_date_format, target_date_format):
 
 
 def longest_word(file_name):
+    """Finds the longest word in text, and the line that it came from
+    Returns 0 if the file is empty.
+
+    Args:
+        file_name (txt file): text file with words on lines
+
+    Returns:
+        long_line, long_word: returns line number with longest token
+    """
     long_line, long_word, long_word_length = 0, "", 0
     with open(file_name) as f:
         lines = f.readlines()
@@ -92,6 +125,17 @@ def longest_word(file_name):
 
 
 def get_average_in_range(values, low, high):
+    """Returns the average of the numbers from range (low, high) in values
+    Inclusive of low, exclusive of high
+
+    Args:
+        values (list): list containing ints
+        low (int): start of range (inclusive)
+        high (int): end of range (exclusive)
+
+    Returns:
+        average: average of range
+    """
     if len(values) == 0:
         return 0
     total_values, num_nums = 0, 0
@@ -105,15 +149,28 @@ def get_average_in_range(values, low, high):
 
 
 def mode_digit(n):
-    greatest_num, occurences_dict, greatest_occurences = n % 10, {}, 0
-    n %= 10
-    while n > 0:
-        if n % 10 not in occurences_dict.keys():
-            occurences_dict[n % 10] = 1
-            n %= 10
+    """Returns the digit that appears most frequently in n.
+    If there is a tie for the most frequent digit, the digit with the greatest value is returned.
+
+    Args:
+        n (int): number
+
+    Returns:
+        greatest_num: most common number in n
+    """
+    t = abs(n)
+    greatest_num, occurences_dict, greatest_occurences = 0, {}, 0
+    while t > 0:
+        if (t % 10) not in occurences_dict.keys():
+            occurences_dict[t % 10] = 1
         else:
-            occurences_dict[n % 10] += 1
-            if occurences_dict[n % 10] > greatest_occurences and n % 10 > greatest_num:
-                greatest_num = n % 10
-                n %= 10
+            occurences_dict[t % 10] += 1
+        if occurences_dict[t % 10] > greatest_occurences:
+            greatest_num = t % 10
+            greatest_occurences = occurences_dict[t % 10]
+        elif (
+            occurences_dict[t % 10] == greatest_occurences and (t % 10) >= greatest_num
+        ):
+            greatest_num = t % 10
+        t //= 10
     return greatest_num
