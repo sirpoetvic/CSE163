@@ -62,6 +62,24 @@ def test_longest_word():
     )
 
 
+def test_get_average_in_range():
+    assert_equals(5.5, hw1.get_average_in_range([1, 5, 6, 7, 9], 5, 7))
+    assert_equals(2.0, hw1.get_average_in_range([1, 2, 3], -1, 10))
+    assert_equals(0, hw1.get_average_in_range([0, 0, 0, 0, 0, 0, 0], -1, 10))
+    assert_equals(0, hw1.get_average_in_range([1, 1, 1], 2, 10))
+
+
+def test_mode_digit():
+    # assert_equals(1, hw1.mode_digit(12121))
+    # assert_equals(0, hw1.mode_digit(0))
+    # assert_equals(2, hw1.mode_digit(-122))
+    # assert_equals(2, hw1.mode_digit(1211232231))
+    print(hw1.mode_digit(12121))
+    print(hw1.mode_digit(0))
+    print(hw1.mode_digit(-122))
+    print(hw1.mode_digit(1211232231))
+
+
 def main():
     # test_total()
     test_count_divisible_digits()
@@ -69,6 +87,8 @@ def main():
     test_travel()
     test_reformat_date()
     test_longest_word()
+    test_get_average_in_range()
+    test_mode_digit()
     # Call your test functions here!
 
 

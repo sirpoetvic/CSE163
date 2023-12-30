@@ -92,8 +92,28 @@ def longest_word(file_name):
 
 
 def get_average_in_range(values, low, high):
-    pass
+    if len(values) == 0:
+        return 0
+    total_values, num_nums = 0, 0
+    for i in values:
+        if i >= low and i < high:
+            total_values += i
+            num_nums += 1
+    if num_nums == 0:
+        return 0
+    return total_values / num_nums
 
 
 def mode_digit(n):
-    pass
+    greatest_num, occurences_dict, greatest_occurences = n % 10, {}, 0
+    n %= 10
+    while n > 0:
+        if n % 10 not in occurences_dict.keys():
+            occurences_dict[n % 10] = 1
+            n %= 10
+        else:
+            occurences_dict[n % 10] += 1
+            if occurences_dict[n % 10] > greatest_occurences and n % 10 > greatest_num:
+                greatest_num = n % 10
+                n %= 10
+    return greatest_num
