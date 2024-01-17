@@ -1,5 +1,5 @@
-'''write a method named fibonacci() that takes an argument n that will
-   return the first fibonacci number that is greater than n.'''
+"""write a method named fibonacci() that takes an argument n that will
+   return the first fibonacci number that is greater than n."""
 
 
 def fibonacci(int):
@@ -15,5 +15,5 @@ def main():
     assert fibonacci(-2) == 1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

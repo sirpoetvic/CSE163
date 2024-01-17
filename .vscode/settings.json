@@ -1,4 +1,7 @@
+//I don't actually know if this does anything -- but if it does, I don't want to remove it.
+//I'm a little too lazy to check, so the file is staying here -- Victor
 {
      "python.analysis.typeCheckingMode": "basic",
-     "python.analysis.autoImportCompletions": true
+     "python.analysis.autoImportCompletions": true,
+     "files.simpleDialog.enable": true
 }
