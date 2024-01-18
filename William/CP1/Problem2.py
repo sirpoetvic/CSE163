@@ -15,7 +15,7 @@ def filter_long_lines(song_file, word_min):
 
 
 def main():
-    filter_long_lines('song.txt', 7)
+    filter_long_lines('William\\CP1\\song.txt', 7)
 
 
 if __name__ == "__main__":
