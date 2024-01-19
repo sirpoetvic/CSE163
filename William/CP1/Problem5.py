@@ -1,7 +1,3 @@
-"""
-DO THURS
-"""
-
 def area_codes(phone_numbers):
     """
     Takes a list of str as input where each str in the list is a phone #.
@@ -12,3 +8,4 @@ def area_codes(phone_numbers):
     Returns:
         Area codes (first 3 numbers of the phone #)
     """
+    return len(set(phone[:3] for phone in phone_numbers))
