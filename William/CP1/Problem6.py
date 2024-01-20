@@ -20,7 +20,7 @@ def count_words(file_name):
 
 
 def main():
-    print(count_words("William\\CP1\\popular_techno_song.txt"))
+    print(count_words("William\\CP1\\test_files\\popular_techno_song.txt"))
 
 
 if __name__ == "__main__":
