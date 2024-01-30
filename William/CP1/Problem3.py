@@ -17,7 +17,7 @@ def count_unique_words(file_name):
 
 
 def main():
-    print(count_unique_words("William\\CP1\\test_files\\song.txt"))
+    print(count_unique_words("William\\CP1\\text_files\\song.txt"))
 
 
 if __name__ == "__main__":
