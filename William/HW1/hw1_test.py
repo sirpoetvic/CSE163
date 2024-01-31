@@ -47,19 +47,58 @@ def test_is_relatively_prime():
     assert_equals(True, hw1.is_relatively_prime(87, 88))
 
 
+def test_travel():
+    """
+    Tests travel
+    """
+
+
+def test_reformat_date():
+    """
+    Tests refortmat_date
+    """
+    assert_equals('31/12/1998',
+                  hw1.reformat_date("12/31/1998", "M/D/Y", "D/M/Y"))
+    assert_equals('3/1/2', hw1.reformat_date("1/2/3", "M/D/Y", "Y/M/D"))
+    assert_equals('4/0', hw1.reformat_date("0/2000/4", "Y/D/M", "M/Y"))
+    assert_equals('2', hw1.reformat_date("3/2", "M/D", "D"))
+    # add another test case
+    # add anohter test case
+
+
 def test_longest_word():
     """
-    Test longest_word
+    Tests longest_word
     """
-    assert_equals('3: Merrily', hw1.longest_word('William\\HW1\\song.txt'))
+    assert_equals('3: Merrily,', hw1.longest_word('William\\HW1\\song.txt'))
     # add another test case, prob with 'None'
     # add another test case
 
 
+def test_get_average_in_range():
+    """
+    Tests get_average_in_range()
+    """
+
+
+def test_mode_digit():
+    """
+    Tests mode_digit
+    """
+
+
 def main():
+    """
+    Running all the testing functions
+    """
     test_total()
     test_count_divisible_digits()
     test_is_relatively_prime()
+    test_travel()
+    test_reformat_date()
+    test_longest_word()
+    test_get_average_in_range()
+    test_mode_digit()
 
 
 if __name__ == '__main__':

@@ -58,12 +58,38 @@ def is_relatively_prime(n, m):
     return True
 
 
-def reformat_date(og_date, mdy, dmy):
-    pass
-
-
 def travel(directions, x, y):
-    pass
+    """
+    Args:
+        directions (String):
+        x (int): position x
+        y (int): position y
+    """
+
+
+def reformat_date(given_date, current_date, target_date):
+    """
+    Returns a date, reformatted to a target format
+
+    Args:
+        given_date (String): date that is given
+        current_date (String): format of the date given
+        target_date (String): what to change the format of the date to
+    """
+    date_split = given_date.split("/")
+    current_date_split = current_date.split("/")
+    target_date_split = target_date.split("/")
+    result_date, result_date_parts = "", []
+
+    for target_part in target_date_split:
+        index_in_current = current_date_split.index(target_part)
+        result_date_parts.append(date_split[index_in_current])
+
+    result_date = result_date_parts[0]
+    for part in result_date_parts[1:]:
+        result_date += "/" + part
+
+    return result_date
 
 
 def longest_word(file_name):
@@ -94,6 +120,10 @@ def longest_word(file_name):
                     largest_word = key
 
     return f"{largest_linecount}: {largest_word}"
+
+
+def get_average_in_range():
+    pass
 
 
 def mode_digit(n):
