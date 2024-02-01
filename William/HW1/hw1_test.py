@@ -30,6 +30,7 @@ def test_count_divisible_digits():
     assert_equals(1, hw1.count_divisible_digits(-204, 5))
     assert_equals(0, hw1.count_divisible_digits(24, 5))
     assert_equals(0, hw1.count_divisible_digits(1, 0))
+    # my test
     assert_equals(5, hw1.count_divisible_digits(96922, 1))
     assert_equals(4, hw1.count_divisible_digits(969220, 2))
 
@@ -43,6 +44,7 @@ def test_is_relatively_prime():
     assert_equals(True, hw1.is_relatively_prime(5, 9))
     assert_equals(True, hw1.is_relatively_prime(8, 9))
     assert_equals(True, hw1.is_relatively_prime(7, 1))
+    # my test
     assert_equals(False, hw1.is_relatively_prime(8, 24))
     assert_equals(True, hw1.is_relatively_prime(87, 88))
 
@@ -51,6 +53,10 @@ def test_travel():
     """
     Tests travel
     """
+    assert_equals((-1, 4), hw1.travel("NW!ewnW", 1, 2))
+    # my test
+    assert_equals((2, 5), hw1.travel("nsxxwe!enW", 2, 4))
+    assert_equals((0, 0), hw1.travel("SsEeNnWw", 0, 0))
 
 
 def test_reformat_date():
@@ -79,12 +85,25 @@ def test_get_average_in_range():
     """
     Tests get_average_in_range()
     """
+    assert_equals(5.5, hw1.get_average_in_range([1, 5, 6, 7, 9], 5, 7))
+    assert_equals(2.0, hw1.get_average_in_range([1, 2, 3], -1, 10))
+    assert_equals(2.0, hw1.get_average_in_range([1, 2, 3], -1, 10))
+    # my test
+    assert_equals(0, hw1.get_average_in_range([], 1, 5))
+    assert_equals(0, hw1.get_average_in_range([1, 2, 3], 5, 8))
 
 
 def test_mode_digit():
     """
     Tests mode_digit
     """
+    assert_equals(1, hw1.mode_digit(12121))
+    assert_equals(0, hw1.mode_digit(0))
+    assert_equals(2, hw1.mode_digit(-122))
+    assert_equals(2, hw1.mode_digit(1211232231))
+    # my test
+    assert_equals(5, hw1.mode_digit(5555545111))
+    assert_equals(3, hw1.mode_digit(333334377733))
 
 
 def main():

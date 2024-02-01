@@ -29,15 +29,16 @@ def count_divisible_digits(n, m):
         n (int) = Integer that the digits are drawn from
         m (int) = Integer to divide by
     """
-    counter, digits, n = 0, [], abs(n)
+    counter, n_abs = 0, abs(n)
 
     if m == 0 or n == 0:
         return counter
 
-    for digit in str(n):
-        digits.append(digit)
-        if int(digit) % m == 0:
+    while n_abs > 0:
+        digit = n_abs % 10
+        if digit % m == 0 or digit == 0:
             counter += 1
+        n_abs //= 10
     return counter
 
 
@@ -60,11 +61,23 @@ def is_relatively_prime(n, m):
 
 def travel(directions, x, y):
     """
+    Returns a tuple of the position in format (x_new, y_new)
     Args:
-        directions (String):
-        x (int): position x
-        y (int): position y
+        directions (String): Directions given in N E S W
+        x (int): starting position x
+        y (int): starting position y
     """
+    x_new, y_new = x, y
+    for i in range(len(directions)):
+        if directions[i].lower() == "n":
+            y_new += 1
+        elif directions[i].lower() == "e":
+            x_new += 1
+        elif directions[i].lower() == "s":
+            y_new -= 1
+        elif directions[i].lower() == "w":
+            x_new -= 1
+    return (x_new, y_new)
 
 
 def reformat_date(given_date, current_date, target_date):
@@ -122,9 +135,50 @@ def longest_word(file_name):
     return f"{largest_linecount}: {largest_word}"
 
 
-def get_average_in_range():
-    pass
+def get_average_in_range(int_list, low, high):
+    """
+    Takes a list of integers, returns the average of all values in the list
+    Range from low (inclusive) to high (exclusive)
+    Args:
+        int_list (list of Integers):
+        low (int):
+        high (int):
+    """
+    range_list = []
+    for i in int_list:
+        if i >= low and i < high:
+            range_list.append(i)
+    if len(range_list) == 0:
+        return 0
+    return sum(range_list)/len(range_list)
 
 
 def mode_digit(n):
-    pass
+    """
+    Takes int n, returns the digit that appears most frequently in the number
+    Digit returned MUST be positive.
+    Do not create strings in any way to solve any part of the problem.
+    Do not use any nested loops or recursion.
+    Do not use an if, elif, or else branch for each digit.
+
+    Args:
+        n (int): positive or negative number
+    """
+    digit_list, digit_counts, most_word, most_word_val = [], {}, 0, 0
+    n = abs(n)
+
+    while n != 0:
+        digit_list.append(n % 10)
+        n //= 10
+
+    for digit in digit_list:
+        if digit in digit_counts:
+            digit_counts[digit] += 1
+        else:
+            digit_counts[digit] = 1
+
+        if digit_counts[digit] > most_word_val:
+            most_word = digit
+            most_word_val = digit_counts[digit]
+
+    return most_word
