@@ -90,7 +90,7 @@ def assess_the_model(model, features_test, labels_test):
 
 
 def main():
-    df = load_data('CP3\\mushrooms.csv')
+    df = load_data('William\\CP3\\mushrooms.csv')
     features_train, features_test, labels_train, labels_test = process_data(df)
     print(len(features_train), len(features_test))
     print(len(labels_train), len(labels_test))

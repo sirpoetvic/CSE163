@@ -21,7 +21,7 @@ Return the model.
 
 
 def create_model():
-    data = pd.read_csv('CP3\\weather.csv')
+    data = pd.read_csv('William\\CP3\\weather.csv')
     features = data.loc[:, data.columns != 'MAX']
     labels = data['MAX']
     model = DecisionTreeRegressor()
