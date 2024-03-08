@@ -23,6 +23,5 @@ def main():
     test_species_count()
 
 
-# To run this file in Repl.It, update the .replit file
 if __name__ == "__main__":
     main()

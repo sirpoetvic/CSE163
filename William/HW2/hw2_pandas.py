@@ -30,9 +30,7 @@ def max_level(data):
     returns the first encountered.
 
     Args:
-        data (list): A list of tuples representing parsed pokemon data.
-            Each tuple contains (name, level) where name is the
-            name of the pokemon and level is its corresponding level
+        data (list): data to be accessed
     """
     df = pd.read_csv(data)
     max_lvl = df['level'].max()
@@ -42,4 +40,40 @@ def max_level(data):
 
 
 def filter_range(data):
-    pass
+    """_summary_
+
+    Args:
+        data (csv file): data to be accessed
+    """
+    df = pd.read_csv(data)
+    poke_range = df[(df['level'] >= 35) & (df['level'] < 72)]
+    pokemon_sort = poke_range['name']
+    return list(pokemon_sort)
+
+
+def mean_attack_for_type(data, type):
+    """_summary_
+
+    Args:
+        data (_type_): _description_
+        type (_type_): _description_
+    """
+    df = pd.read_csv(data)
+    poke_range = df[df['type'] == type]
+    mean = poke_range['atk'].mean()
+
+    if type not in poke_range:
+        return None
+    return mean
+
+
+def count_types(data):
+    poke_range = data['type'].value_counts()
+    poke_dict = dict(poke_range)
+    return poke_dict
+
+
+def mean_attack_per_type(data):
+    df = pd.read_csv(data)
+    poke_range = df.groupby('type')['atk'].mean()
+    return dict(poke_range)
