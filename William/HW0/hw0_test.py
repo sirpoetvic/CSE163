@@ -38,6 +38,9 @@ def test_swip_swap():
 
 
 def main():
+    """
+    Running all the testing functions
+    """
     test_funky_sum()
     test_total()
     test_swip_swap()
