@@ -11,7 +11,7 @@ goog["Adj Close"].plot()
 ans2 = goog.loc["2019-10":"2020-04"]["Adj Close"]
 ans2.plot()
 
-# Problem 3
+# Problem 3``
 ans3 = goog["Adj Close"].resample("ME").mean()
 ans3.plot()
 
