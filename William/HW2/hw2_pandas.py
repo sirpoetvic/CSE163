@@ -39,41 +39,52 @@ def max_level(data):
     return (species, max_lvl)
 
 
-def filter_range(data):
-    """_summary_
+def filter_range(data, lower, upper):
+    """Filters pokemon by level, based on lower/upper values
 
     Args:
         data (csv file): data to be accessed
     """
     df = pd.read_csv(data)
-    poke_range = df[(df['level'] >= 35) & (df['level'] < 72)]
+    poke_range = df[(df['level'] >= lower) & (df['level'] < upper)]
     pokemon_sort = poke_range['name']
     return list(pokemon_sort)
 
 
 def mean_attack_for_type(data, type):
-    """_summary_
+    """Finds the mean attack of all pokemon given a type
 
     Args:
-        data (_type_): _description_
-        type (_type_): _description_
+        data (csv file): data to be accessed
+        type (String): pokemon type to be assessed
     """
     df = pd.read_csv(data)
     poke_range = df[df['type'] == type]
-    mean = poke_range['atk'].mean()
-
-    if type not in poke_range:
+    mean_attack = poke_range['atk'].mean()
+    if poke_range.empty:
         return None
-    return mean
+    return mean_attack
 
 
 def count_types(data):
-    poke_range = data['type'].value_counts()
+    """counts the number of unique types of pokemon
+    returns a dict with all pokemon types
+
+    Args:
+        data (csv): data to be accessed
+    """
+    df = pd.read_csv(data)
+    poke_range = df['type'].value_counts()
     poke_dict = dict(poke_range)
     return poke_dict
 
 
 def mean_attack_per_type(data):
+    """Finds the mean attack of all types, returns a dict with them
+
+    Args:
+        data (csv file): data to be accessed
+    """
     df = pd.read_csv(data)
     poke_range = df.groupby('type')['atk'].mean()
     return dict(poke_range)
