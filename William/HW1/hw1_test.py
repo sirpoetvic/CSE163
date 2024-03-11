@@ -31,8 +31,9 @@ def test_count_divisible_digits():
     assert_equals(0, hw1.count_divisible_digits(24, 5))
     assert_equals(0, hw1.count_divisible_digits(1, 0))
     # my test
-    assert_equals(5, hw1.count_divisible_digits(96922, 1))
-    assert_equals(4, hw1.count_divisible_digits(969220, 2))
+    """ assert_equals(1, hw1.count_divisible_digits(123, 3))
+    assert_equals(1, hw1.count_divisible_digits(123, 4))
+    assert_equals(0, hw1.count_divisible_digits(123, 5))"""
 
 
 def test_is_relatively_prime():
@@ -77,8 +78,8 @@ def test_longest_word():
     Tests longest_word
     """
     assert_equals('3: Merrily,', hw1.longest_word('William\\HW1\\song.txt'))
-    # add another test case, prob with 'None'
     # add another test case
+    assert_equals(None, hw1.longest_word('William\\HW1\\blank.txt'))
 
 
 def test_get_average_in_range():

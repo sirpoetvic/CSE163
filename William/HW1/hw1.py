@@ -117,13 +117,13 @@ def longest_word(file_name):
     with open(file_name) as file:
         words = file.readlines()
 
-        if words == 0:
+        if len(words) == 0:
             return None
 
         for word in words:
             line_count += 1
             keys = word.split()
-            if keys == 0:
+            if len(keys) == 0:
                 return None
 
             for key in keys:
