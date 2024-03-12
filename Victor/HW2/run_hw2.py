@@ -55,9 +55,9 @@ def part1():
 
 def main():
     part0()
-    print()
-    print()
-    part1()
+    # print()
+    # print()
+    # part1()
 
 
 if __name__ == "__main__":
