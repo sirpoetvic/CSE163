@@ -1,3 +1,4 @@
+from pyexpat import features
 import pandas as pd
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import mean_squared_error
@@ -12,10 +13,10 @@ def problem_0():
 
 def problem_1(data):
     # Select all non-blank rows, with given columns
-    features = data.loc[:, ["cap-shape", "cap-surface", "cap-color"]].dropna()
-
-    # Make sure that you select only from the features rows
-    labels = data.loc[features.index, "class"]
+    features_col = ["cap-shape", "cap-surface", "cap-color", "class"]
+    data = data.loc[:, features_col].dropna()
+    features = pd.get_dummies(data.loc[:, data.columns != "class"])
+    labels = data["class"]
 
     # 70% Training, 30% Testing
     features_train, features_test, labels_train, labels_test = train_test_split(
@@ -25,7 +26,6 @@ def problem_1(data):
 
 
 def problem_2(features_train, labels_train):
-    features_train = pd.get_dummies(features_train)
     model = DecisionTreeClassifier()
 
     # Train it on training data
@@ -39,7 +39,7 @@ def problem_2(features_train, labels_train):
 
 
 def problem_3(model, features_test, labels_test):
-    train_predictions = model.predict(pd.get_dummies(features_test))
+    train_predictions = model.predict(features_test)
     train_acc = accuracy_score(labels_test, train_predictions)
 
     return train_acc
