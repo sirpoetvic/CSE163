@@ -3,8 +3,6 @@ Name: Victor Wong
 CSE163
 """
 
-from cse163_utils import parse
-
 
 def species_count(parsed_csv):
     unique_holder = set()
