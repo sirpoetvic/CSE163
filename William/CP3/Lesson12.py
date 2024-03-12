@@ -41,10 +41,11 @@ def process_data(df):
     features: 'cap-shape', 'cap-surface', 'cap-color'
     lables: 'class'
     '''
-    feature_col = ['cap-shape', 'cap-surface', 'cap-color']
-    features = df.loc[:, feature_col]
-    features = features.dropna()
-    labels = df.loc[features.index, 'class']
+    feature_col = ['cap-shape', 'cap-surface', 'cap-color', 'class']
+    df = df.loc[:, feature_col].dropna()
+    features = df.loc[:, df.columns != 'class']
+    features = pd.get_dummies(features)
+    labels = df['class']
 
     features_train, features_test, labels_train, labels_test = \
         train_test_split(features, labels, test_size=0.3)
@@ -83,7 +84,7 @@ def assess_the_model(model, features_test, labels_test):
 
     For reference, your test accuracy should be around 70%.
     '''
-    train_prediction = model.predict(pd.get_dummies(features_test))
+    train_prediction = model.predict(features_test)
     train_accuracy = accuracy_score(labels_test, train_prediction)
 
     return train_accuracy

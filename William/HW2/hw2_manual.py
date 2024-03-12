@@ -4,8 +4,6 @@ CSE 163
 No pandas version of the HW2 assignment
 """
 
-from cse163_utils import parse
-
 
 # Your code here!
 def species_count(data):
@@ -16,9 +14,8 @@ def species_count(data):
     Args:
         data (csv file): pokemon dataset with attributes
     """
-    poke_list = parse(data)
     unique_pokemon = set()
-    for i in poke_list:
+    for i in data:
         unique_pokemon.add(i['name'])
     return len(unique_pokemon)
 
@@ -36,10 +33,9 @@ def max_level(data):
             Each tuple contains (name, level) where name is the
             name of the pokemon and level is its corresponding level
     """
-    poke_list = parse(data)
     level = 0
     species = ''
-    for i in poke_list:
+    for i in data:
         if i['level'] > level:
             level = i['level']
             species = i['name']
@@ -55,9 +51,8 @@ def filter_range(data, lower, upper):
         lower (int): lower level bound (inclusive)
         upper (int): upper level bound (exclusive)
     """
-    poke_list = parse(data)
     species = []
-    for i in poke_list:
+    for i in data:
         if i['level'] >= lower and i['level'] < upper:
             species.append(i['name'])
     return species
@@ -72,11 +67,10 @@ def mean_attack_for_type(data, type):
         type (String): type of pokemon
 
     """
-    poke_list = parse(data)
     atk = 0
     count = 0
 
-    for poke in poke_list:
+    for poke in data:
         if poke['type'] == type:
             atk += poke['atk']
             count += 1
@@ -94,9 +88,8 @@ def count_types(data):
     Args:
         data (csv file): data to be accessed
     """
-    poke_list = parse(data)
     type_occurrences = {}
-    for i in poke_list:
+    for i in data:
         type = i['type']
         if type not in type_occurrences:
             type_occurrences[type] = 1
@@ -113,12 +106,11 @@ def mean_attack_per_type(data):
     Args:
         data (csv file): data to be accesssed
     """
-    poke_list = parse(data)
     type_atk = {}
     type_mean = {}
     type_occurrences = {}
     # puts the type and atk in a dict (key value pair)
-    for i in poke_list:
+    for i in data:
         type = i['type']
         atk = i['atk']
         if type not in type_atk:
