@@ -37,7 +37,8 @@ def mean_attack_for_type(parsed_csv, pokemon_type):
             length += 1
     if length == 0:
         return None
-    return total / length
+    else:
+        return total / length
 
 
 def count_types(parsed_csv):

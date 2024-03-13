@@ -17,7 +17,7 @@ def filter_range(df, lower: int, upper: int):
 
 
 def mean_attack_for_type(df, pokemon_type):
-    if pokemon_type not in df["type"]:
+    if pokemon_type not in df["type"].unique():
         return None
     return df[df["type"] == pokemon_type]["atk"].mean()
 
