@@ -17,7 +17,7 @@ def max_level(parsed_csv):
         if i["level"] > highest_level[1]:
             highest_level[0] = i["name"]
             highest_level[1] = i["level"]
-    return highest_level
+    return tuple(highest_level)
 
 
 def filter_range(parsed_csv, lower: int, upper: int):
@@ -35,7 +35,10 @@ def mean_attack_for_type(parsed_csv, pokemon_type):
         if pokemon_type == i["type"]:
             total += i["atk"]
             length += 1
-    return total / length
+    if length == 0:
+        return None
+    else:
+        return total / length
 
 
 def count_types(parsed_csv):
