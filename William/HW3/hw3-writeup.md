@@ -11,11 +11,11 @@ Review the source of the dataset [here](https://nces.ed.gov/programs/digest/d18/
 ### #1: Plotting questions
 1. Do you think the bar chart from part 1b is an effective data visualization? Explain in 1-2 sentences why or why not.
 ```
-your answer here
+Yes, since we are comparing, it's easiest to see the disparities (though minimal in this scenario) with a bar graph. Something like a line graph would see more of the trends, while a bar graph mainly focuses on comparison.
 ```
 2. Why did you choose the type of plot that you did in part 1c? Explain in a few sentences why you chose this type of plot.
 ```
-your answer here
+For plot_hisplabic_min_degree.png, I used a linear regression plot. I believe that this is a good plot in this situation because we're trying to see the disparities of how people with high school and bachelor's degree's changed over the years (i.e. the trends), which can be seen with a line plot, but having a regression with datapoints helps to see outliers, and more or less given the dataset.
 ```
 
 ### #2: Datasets
@@ -26,7 +26,8 @@ been flawed. Describe a possible bias present in this dataset and why it might h
 occurred. Your answer should be about 2 or 3 sentences long. Again, describe how
 the data is incorrect. (Note: incomplete is not necessarily the same as incorrect.)
 ```
-your answer here
+There is a very good chance that the data is collected in a specific area that caters more towards one or more demographics; from urban areas, neglecting rural populations.That is, data and trends will be more biased towards those specific demographics, genders, groups, etc... Cities that are bigger are more likely to be more diverse, than those without them. This causes bias.
+
 ```
 ### #3: Context
 Later in the class we will talk about ethics in data science. Question #3 here is 
@@ -46,5 +47,7 @@ injustice even when designed with equity in mind? In other words, we are trying
 to think of a way that we could use this data with good intentions, but actually 
 would end up causing harm. 
 ```
-your answer here
+Decision: given the data, provide better opportunities for men to acheive higher education like Masters.
+
+This policy makes the problem worse, as it is a known fact that masters programs are predominately filled by men, which isn't great. As such, more men would have more opportunities to get masters, which goes against current initatives and holistic statistics that women get more masters degrees with this dataset specifically.
 ```
