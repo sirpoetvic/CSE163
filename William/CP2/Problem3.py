@@ -1,41 +1,24 @@
-import pandas as pd
+def count_unique_words(file_name):
+    """
+    Returns the amount of unique words, including punctuation.
 
-
-def problem_0(df):
-
-    ans0 = df.groupby('shape')['duration (seconds)'].mean()
-    return ans0
-
-
-def problem_1(df):
-
-    pos_value = (df['latitude'] > 0) | (df['longitude'] > 0)
-    ans1 = df[pos_value].groupby('city')['duration (seconds)'].max()
-    return ans1
-
-
-def problem_2(df):
-
-    largest_duration = df.groupby('city')['duration (seconds)'].sum()
-    ans2 = largest_duration.idxmax()
-    return ans2
-
-
-def problem_3(df):
-
-    ans3 = df['comments'].str.split().str.len()
-    return ans3
+    Args:
+        file_name (.txt): file name to count unique words
+    """
+    file_words = []
+    with open(file_name) as file:
+        lines = file.readlines()
+        for line in lines:
+            words = line.strip().split()
+            for i in words:
+                if i not in file_words:
+                    file_words.append(i)
+    return len(file_words)
 
 
 def main():
-
-    df = pd.read_csv('William\\CP2\\ufos.csv')
-    df = df.head()
-    print(problem_0(df), "\n")
-    print(problem_1(df), "\n")
-    print(problem_2(df), "\n")
-    print(problem_3(df))
+    print(count_unique_words("William\\CP1\\text_files\\song.txt"))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
