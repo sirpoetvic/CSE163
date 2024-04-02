@@ -2,11 +2,8 @@
 
 # https://cse163.github.io/book/module-2-data-structures-and-files/lesson-4-lists-and-files/practice-count-unique-words.html
 
-"""Returns all unique words in a given txt file
-    """
 
-
-def count_unique_words(file_name):
+def count_unique_words(file_name) -> list:
     """Returns all unique words from a file
 
     Args:

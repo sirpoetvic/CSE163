@@ -3,6 +3,7 @@ Victor Wong
 Period 5
 HW1 assignment
 """
+
 # do not import math
 
 
@@ -24,8 +25,10 @@ def total(n):
 
 
 def count_divisible_digits(n, m):
-    if m == 0 or n == 0:
+    if m == 0:
         return 0
+    elif n == 0:
+        return 1
     n = abs(n)
     if (n % 10) % m == 0:
         return count_divisible_digits(n // 10, m) + 1

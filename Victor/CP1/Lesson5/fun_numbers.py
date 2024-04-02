@@ -3,7 +3,7 @@
 # https://cse163.github.io/book/module-2-data-structures-and-files/lesson-5-data-structures-tuple-set-dict/practice-build-a-list-comprehension.html
 
 
-def fun_numbers(start, stop):
+def fun_numbers(start: int, stop: int) -> list:
     """Returns all numbers divisible by 2 or 5 in a list
     using list comprehension
 

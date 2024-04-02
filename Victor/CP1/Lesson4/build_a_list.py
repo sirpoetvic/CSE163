@@ -13,6 +13,7 @@ def fun_numbers(start, stop):
     Returns:
         list: all numbers divisible by 2 or 5 in range start to stop
     """
+
     return_list = []
     for i in range(start, stop):
         if i % 2 == 0 or i % 5 == 0:
