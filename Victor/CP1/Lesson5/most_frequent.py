@@ -1,9 +1,9 @@
-# most_frequent
+"""most_frequent"""
 
 # https://cse163.github.io/book/module-2-data-structures-and-files/lesson-6-csv-data/practice-most-frequent-word.html
 
 
-def most_frequent(counts):
+def most_frequent(counts: dict):
     """Returns the word with the highest count. The input is a dict
     with keys that are words and values that are counts.
     If the given dict is empty, returns None.
@@ -14,6 +14,7 @@ def most_frequent(counts):
     Returns:
         str: most frequent word
     """
+
     if not counts:
         return None
     max_word, max_num = "", 0

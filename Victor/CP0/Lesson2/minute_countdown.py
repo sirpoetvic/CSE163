@@ -1,6 +1,6 @@
-# minute_countdown
+"""minute_countdown"""
 
-# Link: https://cse163.github.io/book/module-1-introduction-to-python/lesson-2-python-basics/practice-minute-countdown.html
+# https://cse163.github.io/book/module-1-introduction-to-python/lesson-2-python-basics/practice-minute-countdown.html
 
 
 def one_minute_countdown():

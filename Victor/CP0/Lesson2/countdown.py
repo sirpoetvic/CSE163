@@ -1,6 +1,6 @@
-# countdown
+"""countdown"""
 
-# Link: https://cse163.github.io/book/module-1-introduction-to-python/lesson-2-python-basics/practice-countdown.html
+# https://cse163.github.io/book/module-1-introduction-to-python/lesson-2-python-basics/practice-countdown.html
 
 
 def countdown(n: int) -> None:

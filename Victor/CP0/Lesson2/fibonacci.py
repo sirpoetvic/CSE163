@@ -1,6 +1,6 @@
-# fibonacci
+"""fibonacci"""
 
-# Link: https://cse163.github.io/book/module-1-introduction-to-python/lesson-2-python-basics/practice-fibonacci.html
+# https://cse163.github.io/book/module-1-introduction-to-python/lesson-2-python-basics/practice-fibonacci.html
 
 
 def fibonacci(num: int):

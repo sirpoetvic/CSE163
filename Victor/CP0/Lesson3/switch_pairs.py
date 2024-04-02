@@ -1,17 +1,17 @@
-"""Write a function named switch_pairs that takes a string argument and
-   swaps all adjacent letters (leaving any unpaired letter untouched)"""
+"""switch_pairs"""
 
-# Link: https://cse163.github.io/book/module-1-introduction-to-python/lesson-3-strings-and-lists/practice-switch_pairs.html
+# https://cse163.github.io/book/module-1-introduction-to-python/lesson-3-strings-and-lists/practice-switch_pairs.html
 
 
 def switch_pairs(string: str):
-    """Swaps all adjacent letters of a string argument
+    """takes a string argument and swaps all adjacent letters (leaving any
+    unpaired letter untouched)
 
-    Args:
-        str (_type_): _description_
+     Args:
+         string (str): string to have leters swapped
 
-    Returns:
-        _type_: _description_
+     Returns:
+         _type_: _description_
     """
 
     returnstring = ""

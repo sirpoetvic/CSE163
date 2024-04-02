@@ -1,7 +1,6 @@
-"""Write a function named find_range() that takes a list of integers
-   and returns the range of values found in the list."""
+"""find_range"""
 
-# Link: https://cse163.github.io/book/module-1-introduction-to-python/lesson-3-strings-and-lists/practice-find_range.html
+# https://cse163.github.io/book/module-1-introduction-to-python/lesson-3-strings-and-lists/practice-find_range.html
 
 
 def find_range(input_list: list) -> int:
