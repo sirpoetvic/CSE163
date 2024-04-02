@@ -1,31 +1,21 @@
-import pandas as pd
+def fun_numbers(num1, num2):
 
+    """
+    Args:
+        num1 (int): starting number
+        num2 (int): stopping numebr
+    Returns:
+        fun_range: all numbers divisible by 2 or 5 in range start to stop
 
-def problem_1(df):
-    ans1 = df["Salary"].max() - df["Salary"].min()
-    return ans1
+    All numbers divisble by 2 or 5 are put in a list and retunred
+    """
+    fun_range = []
 
+    if num2 <= num1:
+        return fun_range
 
-def problem_2(df2):
-    df2["per_capita"] = df2["emissions"] / df2["population"]
-    ans2 = df2["per_capita"].max()
-    return ans2
-
-
-def problem_3(df2):
-    high_pop = df2['population'] > 50
-    is_france = df2['country'] == 'France'
-    ans3 = df2[high_pop & is_france]
-    return ans3
-
-
-def main():
-    df = pd.read_csv('William\\CP2\\tas.csv')
-    df2 = pd.read_csv('William\\CP2\\emissions.csv')
-    print(problem_1(df))
-    print(problem_2(df2))
-    print(problem_3(df2))
-
-
-if __name__ == '__main__':
-    main()
+    for i in range(num1, num2):
+        if (i % 2 == 0 or i % 5 == 0):
+            fun_range.append(i)
+    fun_range.sort()
+    return fun_range

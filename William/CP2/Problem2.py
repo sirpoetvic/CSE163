@@ -1,38 +1,22 @@
-import pandas as pd
+def filter_long_lines(song_file, word_min):
+    """
+    Prints out all of the lines in the file with at least that many words
 
-
-def problem1(df):
-    df = df.head()
-    ans0 = df['magnitude'].mean()
-    return ans0
-
-
-def problem2(df):
-    df = df.head()
-    ans1 = df['magnitude'] > df['magnitude'].mean()
-    return (len(df[ans1]))
-
-
-def problem3(df):
-    combined_rows = df[
-        (df['name'] == 'Tonga') | (df['name'] == 'Papua New Guinea')]
-    ans2 = combined_rows[combined_rows['day'] == 8]
-    return (ans2)
-
-
-def problem4(df):
-    max_index = df['magnitude'].idxmax()
-    ans3 = df.loc[max_index, :]
-    return ans3
+    Args:
+        song_file (.txt): file name
+        word_min (int): minimum number of words
+    """
+    with open(song_file) as file:
+        lines = file.readlines()
+        for line in lines:
+            words = line.strip().split()
+            if len(words) >= word_min:
+                print(line)
 
 
 def main():
-    df = pd.read_csv('William\\CP2\\earthquakes.csv')
-    print(problem1(df))
-    print(problem2(df))
-    print(problem3(df))
-    print(problem4(df))
+    filter_long_lines('William\\CP1\\song.txt', 7)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,21 +1,26 @@
-def filter_long_lines(song_file, word_min):
-    """
-    Prints out all of the lines in the file with at least that many words
+def countdown(number):
+    if number < 0:
+        print("Start must be non-negative!")
+    else:
+        print(f"{number} second countdown!")
+        for i in range(number, -1, -10):
+            print(i)
 
-    Args:
-        song_file (.txt): file name
-        word_min (int): minimum number of words
-    """
-    with open(song_file) as file:
-        lines = file.readlines()
-        for line in lines:
-            words = line.strip().split()
-            if len(words) >= word_min:
-                print(line)
+        print("Done!")
+
+
+def sample_run():
+    countdown(60)
+    print()
+    countdown(15)
+    print()
+    countdown(-4)
+    print()
+    countdown(0)
 
 
 def main():
-    filter_long_lines('William\\CP1\\song.txt', 7)
+    sample_run()
 
 
 if __name__ == "__main__":
