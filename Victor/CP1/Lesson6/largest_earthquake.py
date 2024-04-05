@@ -1,13 +1,13 @@
-# largest_earthquake
+"""largest_earthquake"""
 
 # https://cse163.github.io/book/module-2-data-structures-and-files/lesson-6-csv-data/practice-largest-earthquake.html
 
 
-def largest_earthquake(data):
+def largest_earthquake(data: dict):
     """Returns largest magnitude of earthquake list of dictionaries
 
     Args:
-        data (dictionary): dictionary containing earthquake data
+        data (dict): dictionary containing earthquake data
 
     Returns:
         String: Name of place with largest magnitude earthquake

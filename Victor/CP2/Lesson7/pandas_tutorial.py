@@ -1,3 +1,7 @@
+"""pandas_tutorial"""
+
+# https://cse163.github.io/book/module-3-pandas/lesson-7-introduction-to-pandas/practicereading-pandas-tutorial/PandasTutorial.html
+
 import pandas as pd
 
 df = pd.read_csv("Victor\\CP2\\tas.csv")

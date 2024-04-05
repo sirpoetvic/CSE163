@@ -1,3 +1,7 @@
+"""earthquakes"""
+
+# https://cse163.github.io/book/module-3-pandas/lesson-7-introduction-to-pandas/practice-earthquakes/Earthquakes.html
+
 import pandas as pd
 
 df = pd.read_csv("Victor\\CP2\\earthquakes.csv")

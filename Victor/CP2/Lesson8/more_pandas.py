@@ -1,3 +1,7 @@
+"""more_pandas"""
+
+# https://cse163.github.io/book/module-3-pandas/lesson-8-more-pandas/practice-more-pandas/PandasPractice.html
+
 import pandas as pd
 
 df = pd.read_csv("Victor\\CP2\\ufos.csv")

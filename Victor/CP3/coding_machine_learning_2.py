@@ -1,7 +1,7 @@
-from pyexpat import features
+"""coding_machine_learning_2"""
+
 import pandas as pd
 from sklearn.metrics import accuracy_score
-from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
