@@ -4,7 +4,7 @@
 
 import pandas as pd
 
-df = pd.read_csv("Victor\\CP2\\ufos.csv")
+df = pd.read_csv("Victor\\CP2\\Lesson8\\ufos.csv")
 
 # Problem 0
 ans0 = df.groupby("shape")["duration (seconds)"].mean()

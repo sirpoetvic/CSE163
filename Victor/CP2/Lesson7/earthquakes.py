@@ -4,7 +4,7 @@
 
 import pandas as pd
 
-df = pd.read_csv("Victor\\CP2\\earthquakes.csv")
+df = pd.read_csv("Victor\\CP2\\Lesson7\\earthquakes.csv")
 
 # Problem 0: Compute average magnitude of all earthquakes in dataset
 ans0 = df["magnitude"].mean()

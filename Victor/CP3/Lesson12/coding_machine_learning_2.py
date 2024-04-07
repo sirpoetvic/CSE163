@@ -6,12 +6,33 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 
-def problem_0():
-    data = pd.read_csv("Victor\\CP3\\mushrooms.csv")
+def problem_0() -> pd.DataFrame:
+    """Load in the dataset into a DataFrame named data. Don't preprocess the
+    data in any way for this problem.
+
+    Returns:
+        DataFrame: read CSV "mushrooms.csv"
+    """
+    data = pd.read_csv("Victor\\CP3\\Lesson12\\mushrooms.csv")
     return data
 
 
-def problem_1(data):
+def problem_1(data: pd.DataFrame) -> tuple:
+    """
+    Drop all columns that are not relevant to the analysis.
+    Remove all rows that have missing values for the columns
+    of interest. There is no need to throw out rows that have
+    missing values outside of these 4 columns (since those missing
+    values will not be included in the model).
+    Separate the data into usable features and labels.
+    Split the dataset into 70% training data and 30% test data.
+
+    Args:
+        data (DataFrame): _description_
+
+    Returns:
+        tuple: contains training/testing features & labels
+    """
     # Select all non-blank rows, with given columns
     features_col = ["cap-shape", "cap-surface", "cap-color", "class"]
     data = data.loc[:, features_col].dropna()
@@ -26,6 +47,17 @@ def problem_1(data):
 
 
 def problem_2(features_train, labels_train):
+    """
+    Write code to create a decision tree model and train it.
+    Make sure you save it in a variable called model.
+
+    Args:
+        features_train (_type_): _description_
+        labels_train (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     model = DecisionTreeClassifier()
 
     # Train it on training data
@@ -39,10 +71,30 @@ def problem_2(features_train, labels_train):
 
 
 def problem_3(model, features_test, labels_test):
+    """
+    Write code to compute the training and test accuracy of the model in the
+    cell below. Save the train accuracy in varaible called train_acc and the
+    test accuracy in a variable called test_acc.
+
+    For reference, each of your train and test accuracies should be around 70%.
+
+    Args:
+        model (DataFrame)
+        features_test ()
+        labels_test (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     train_predictions = model.predict(features_test)
     train_acc = accuracy_score(labels_test, train_predictions)
 
     return train_acc
+
+
+"""
+
+"""
 
 
 def main():

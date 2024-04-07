@@ -4,8 +4,8 @@
 
 import pandas as pd
 
-df = pd.read_csv("Victor\\CP2\\tas.csv")
-df2 = pd.read_csv("Victor\\CP2\\emissions.csv")
+df = pd.read_csv("Victor\\CP2\\Lesson7\\tas.csv")
+df2 = pd.read_csv("Victor\\CP2\\Lesson7\\emissions.csv")
 
 
 # Problem 0: access the Salary column of tas.csv
