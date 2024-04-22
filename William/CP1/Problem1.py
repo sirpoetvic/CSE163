@@ -1,21 +1,14 @@
-def fun_numbers(num1, num2):
+def minute_countdown():
+    print("One minute countdown")
+    for i in range(60, -1, -10):
+        print(i)
 
-    """
-    Args:
-        num1 (int): starting number
-        num2 (int): stopping numebr
-    Returns:
-        fun_range: all numbers divisible by 2 or 5 in range start to stop
+    print("Done!")
 
-    All numbers divisble by 2 or 5 are put in a list and retunred
-    """
-    fun_range = []
 
-    if num2 <= num1:
-        return fun_range
+def main():
+    minute_countdown()
 
-    for i in range(num1, num2):
-        if (i % 2 == 0 or i % 5 == 0):
-            fun_range.append(i)
-    fun_range.sort()
-    return fun_range
+
+if __name__ == "__main__":
+    main()

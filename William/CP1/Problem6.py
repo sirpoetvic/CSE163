@@ -1,26 +1,15 @@
-def count_words(file_name):
-    """
-    Returns a dict that stores the words as keys and values
-    Counts the number of times that word appeared in the file
 
-    Args:
-        file_name (.txt file): file to access,
-    """
-    word_appear = {}
-    with open(file_name) as file:
-        lines = file.readlines()
-        for line in lines:
-            words = line.split()
-            for i in words:
-                if i in word_appear:
-                    word_appear[i] += 1
-                else:
-                    word_appear[i] = 1
-    return word_appear
+def count_votes(voting_results):
+    canidates = [0, 0, 0]
+    for i in voting_results:
+        canidates[i] += 1
+    return canidates
 
 
 def main():
-    print(count_words("William\\CP1\\text_files\\popular_techno_song.txt"))
+    votes = [1, 0, 1, 1, 2, 0]
+    result = count_votes(votes)
+    print(result)  # prints [2, 3, 1]
 
 
 if __name__ == "__main__":
