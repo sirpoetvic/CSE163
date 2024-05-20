@@ -120,9 +120,12 @@ def plot_hispanic_min_degree(data):
     plt.legend()
     plt.savefig("Victor\\HW3\\plot_hispanic_min_degree.png", bbox_inches="tight")
 
+
 def fit_and_predict_degrees(data):
-    
-    
-    
+    pre_filter = ["Year", "Min degree", "Sex", "Total"]
+    data = data.loc[:, pre_filter].dropna()
+    features = pd.get_dummies(data)
+
+
 if __name__ == "__main__":
     main()
