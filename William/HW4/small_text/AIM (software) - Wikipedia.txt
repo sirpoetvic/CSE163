@@ -1,0 +1,709 @@
+
+
+
+
+
+AIM (software) - Wikipedia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+AIM (software)
+
+From Wikipedia, the free encyclopedia
+(Redirected from AOL Instant Messenger)
+
+					Jump to:					navigation, 					search
+
+
+AIM
+
+
+AIM's new logo introduced in December 2011, replacing the earlier "running man" mascot
+
+
+
+Developer(s)
+AOL
+
+
+Initial release
+May 1997; 20 years ago (1997-05)
+
+
+Written in
+C++, Adobe Flash
+
+
+Operating system
+Windows, Windows Mobile, macOS, Android, iOS, BlackBerry OS
+
+
+Type
+Instant messaging
+
+
+License
+Proprietary
+
+
+Website
+www.aim.com
+
+
+AIM (AOL Instant Messenger) is an instant messaging and presence computer program created by AOL, which uses the proprietary OSCAR instant messaging protocol and the TOC protocol to allow registered users to communicate in real time.
+AIM was popular from the late 1990s to mid-2000s in North America, and was the leading instant messaging application in that region. AIM's popularity declined steeply in the late 2000s, and its fall has often been compared with other once-popular Internet services such as Myspace.[1] On October 5, 2017, AIM's owner, Oath Inc., announced that it would discontinue AIM as a service on December 15, 2017.[2]
+
+
+
+Contents
+
+
+1 History
+
+1.1 Usage decline and product sunset
+
+
+2 The "Running Man"
+3 Protocol
+4 Privacy
+5 Chat robots
+6 URI scheme
+7 Vulnerabilities
+8 Extra features
+
+8.1 iPhone application
+8.2 iPad application
+8.3 AIM Express
+8.4 AIM Pages
+8.5 AIM for Mac
+8.6 AIM real-time IM
+8.7 AIM to mobile (messaging to phone numbers)
+
+
+9 Discontinued features
+
+9.1 AIM for Phoneline
+9.2 AIM Call Out
+
+
+10 Security
+11 References
+12 External links
+
+
+
+History[edit]
+AOL Instant Messenger was initially integrated into AOL Desktop and later also released as a stand-alone download by America Online (AOL) in May 1997 for Microsoft Windows.[3] The software, maintained by AOL, Inc., at one time had the largest share of the instant messaging market in North America, especially in the United States (with 52% of the total reported as of 2006[update]).[4] This does not include other instant messaging software related to or developed by AOL, such as ICQ and iChat.
+Its main competitors during its heyday were ICQ, Yahoo! Messenger and MSN Messenger. AOL particularly had a rivalry or 'chat war' with rival Microsoft starting in 1999. There were several attempts from Microsoft to simultaneously log into their own and AIM's protocol servers. AOL were not happy about this and started blocking MSN Messenger from being able to access AIM.[5][6]
+AIM went officially mobile in early 2008 when the application was released for Windows Mobile devices and allowed for all devices to send IMs via SMS.[7] However AIM could already be used on various devices beforehand with third-party applications, and as early as 2002 on a Sidekick.[8]
+Since 2012, stand-alone official AIM client software includes advertisements and is available for Microsoft Windows, Windows Mobile, Classic Mac OS, macOS, Android, iOS, BlackBerry OS.[9]
+Usage decline and product sunset[edit]
+Around 2011 AIM started to lose popularity rapidly, partly due to the quick rise of Gmail and its built-in real-name Google Chat instant messenger integration in 2011 and because many people started purely moving onto SMS text messaging and later social networking websites (in particular, Facebook Messenger, which was released as a standalone app the same year) for instant messaging.
+As of June 2011[update], one source reported AOL Instant Messenger market share had collapsed to 0.73%.[10] However, this number only reflects installed IM applications, and not active users. The engineers responsible for AIM claimed that they were unable to convince AOL management that free was the future.[11]
+On March 3, 2012, AOL ended employment of AIM's development staff while leaving it active and with help support still provided.[12] On October 5, 2017, it was announced that the AIM service will be discontinued on December 15.[13][2][14]
+The "Running Man"[edit]
+
+
+
+
+The "Running Man"
+
+
+The AIM mascot was designed by JoRoan Lazaro and was implemented in the first release in 1997. This was a yellow stickman-like figure, often called the "Running Man". The mascot appeared on all AIM logos and most wordmarks, and always appeared at the top of the buddy list. AIM's incredible popularity in the late 1990s and the 2000s led to the "Running Man" becoming a familiar brand on the Internet. After over 14 years, the iconic logo was finally disappeared as part of the AIM rebranding in 2011. However, in August 2013, the "Running Man" once again returned.[15]
+In 2014, a Complex editor called it a "symbol of America".[16] In April 2015 the Running Man was officially featured in the Virgin London Marathon, dressed by a person for the AOL-partnered Free The Children charity.[17]
+Protocol[edit]
+The standard protocol that AIM clients use to communicate is called Open System for CommunicAtion in Realtime (OSCAR). Most AOL-produced versions of AIM and popular third party AIM clients use this protocol. However, AOL also created a simpler protocol called TOC that lacks many of OSCAR's features but is sometimes used for clients that only require basic chat functionality. The TOC/TOC2 protocol specifications were made available by AOL, while OSCAR is a closed protocol that third parties have had to reverse-engineer.
+In January 2008, AOL introduced experimental Extensible Messaging and Presence Protocol (XMPP) support for AIM,[18] allowing AIM users to communicate using the standardized, open-source XMPP. However, in March 2008, this service was discontinued.[citation needed] In May 2011, AOL started offering limited XMPP support.[19] On March 1, 2017, AOL announced (via XMPP-login-time messages[20]) that the AOL XMPP gateway would be desupported, effective March 28, 2017.
+Privacy[edit]
+For privacy regulations, AIM has strict age restrictions. AIM accounts are available only for people over the age of 13; children younger than that are not permitted access to AIM.[21]
+Under the AIM Privacy Policy, AOL has no rights to read or monitor any private communications between users. The profile of the user has no privacy.[21]
+If public content is accessed. it can be used for online, print or even broadcast advertising, etc. This is outlined in the policy and terms of service: "... you grant AOL, its parent, affiliates, subsidiaries, assigns, agents and licensees the irrevocable, perpetual, worldwide right to reproduce, display, perform, distribute, adapt and promote this Content in any medium". This allows anything one posts to be used without a separate request for permission.[21]
+The issue of AIM's security has been called into question. AOL states that it has taken great steps to insure that personal information will not be accessed by unauthorized members, but that it cannot guarantee that that will not happen.[21]
+AIM is different from other clients, such as Yahoo! Messenger, in that it does not require approval from one buddy to be added to another's buddy list. As a result, it is possible for users to keep other unsuspecting users on their buddy list to see when they are online, read their status and away messages, and read their profiles. In fact, there is a Web API to display one's status and away message as a widget on one's Web page.[22] However, one can block another user from communicating and seeing one's status, but this does not prevent the user from creating a new account that is not blocked and therefore can still track the first user's status. A more complete privacy option is to select a menu option allowing communication only with those on one's buddy list; this causes blocking (thus appearing offline to) all users who are not on one's buddy list.
+Chat robots[edit]
+AOL and various other companies supply robots on AIM that can receive messages and send a response based on the bot's purpose. For example, bots can help with studying, like StudyBuddy. Some are made to relate to children and teenagers, like Spleak, others give advice, and others are for more general purposes, such as SmarterChild. The more useful chat bots have features like the ability to play games, get sport scores, weather forecasts or financial stock information. Users were able to talk to automated chat bots that could respond to natural human language. They were primarily put into place as a marketing strategy and for unique advertising options. It was used by advertisers to market products or build better consumer relations.[23]
+Before the inclusions of such bots, the other bots DoorManBot and AIMOffline provided features that are provided today by AOL for those who needed it. ZolaOnAOL and ZoeOnAOL were short lived bots that ultimately retired their features in favor of SmarterChild. As of November 18, 2008, the SmarterChild bot for AIM was retired and is no longer offering any services.[citation needed]
+URI scheme[edit]
+AOL Instant Messenger's installation process automatically installs an extra URI scheme ("protocol") handler into some Web browsers, so URIs beginning "aim:" can open a new AIM window with specified parameters. This is similar in function to the mailto: URI scheme, which creates a new e-mail message using the system's default mail program. For instance, a Web page might include a link like the following in its HTML source to open a window for sending a message to the AIM user notarealuser:
+
+<a href="aim:goim?screenname=notarealuser">Send Message</a>
+
+To specify a message body, the message parameter is used, so the link location might look like this:
+
+aim:goim?screenname=notarealuser&message=This+is+my+message
+
+To specify an away message, the message parameter is used, so the link location might look like this:
+
+aim:goaway?message=Hello,+my+name+is+Bill
+
+When placing this inside a URL link, an AIM user could click on the URL link and the away message "Hello, my name is Bill" would instantly become their away message.
+To add a buddy, the addbuddy message is used, with the screenname parameter
+
+aim:addbuddy?screenname=notarealuser
+
+This type of link is commonly found on forum profiles, to easily add contacts
+Vulnerabilities[edit]
+AIM has security weaknesses that have enabled exploits to be created that use third-party software to perform malicious acts on users' computers.[24] Although most are relatively harmless, such as being kicked off the AIM service, others perform potentially dangerous actions such as sending viruses. Some of these exploits rely on social engineering to spread by automatically sending instant messages that contain a URL accompanied by text suggesting the receiving user click on it, an action which leads to infection (i.e. a trojan). These messages can easily be mistaken as coming from a friend and contain a link to a Web address that installs software on the user's computer to restart the cycle.
+Users have also reported sudden additions of toolbars and advertisements from third parties in the newer version of AIM. Multiple complaints about the lack of control of third party involvement have caused many users to stop using the service.[24]
+Extra features[edit]
+iPhone application[edit]
+On March 6, 2008, during Apple Inc.'s iPhone SDK event, AOL announced that they would be releasing an AIM application for iPhone and iPod Touch users. The application is available for free from the App Store, but the company also provides a paid version, which displays no advertisements. Both are available from the App Store. The AIM client for iPhone and iPod Touch supports standard AIM accounts as well as MobileMe accounts. There is also an express version of AIM accessible through the Safari browser on the iPhone and iPod Touch.[25]
+In 2011, AOL launched a massive overhaul of their Instant Messaging service. Included in the update was a brand new iOS application for iPhone and iPod Touch which incorporated all the latest features. A brand new icon was used for the application, featuring the new cursive logo for AIM. The user-interface was entirely redone for the features including: a new buddy list, group messaging, in-line photos and videos, as well as improved file-sharing.[26]
+Currently the application is in version 5.0.5, which was updated as of March 2012. In the latest iteration, it supports more social stream features, much like Facebook and Twitter, as well as the ability to send voice messages up to 60 seconds long.[27]
+iPad application[edit]
+On April 3, 2010, Apple released the first generation iPad. Along with this newly released device AOL released the AIM application for iPad. It was built entirely from scratch for the new version iOS with a specialized user-interface for the device. It supports geo location, Facebook status updates and chat, Myspace, Twitter, YouTube, Foursquare and many social networking platforms.[28]
+AIM Express[edit]
+AIM Express ran in a pop-up browser window. It was intended for use by people who are unwilling or unable to install a standalone application or those at computers that lack the AIM application. AIM Express supported many of the standard features included in the stand-alone client, but did not provide advanced features like file transfer, audio chat, video conferencing, or buddy info. It was implemented in Adobe Flash.[29] It was an upgrade to the prior AOL Quick Buddy, which was later available for older systems that cannot handle Express before being discontinued. Express and Quick Buddy were similar to MSN Web Messenger and Yahoo! Web Messenger. This web version has evolved into AIM.com's web-based messenger.
+AIM Pages[edit]
+Main article: AIM Pages
+AIM Pages was released in May 2006, allowing the 63 million AIM users to create an online, dynamic profile. The buddy list serves as the basis for the AIM Page social networking service. An AIM Page is built using modules following the ModuleT microformat. AIM Pages was discontinued in late 2007.
+AIM for Mac[edit]
+AOL released an all-new AIM for the Macintosh on September 29, 2008 and the final build on December 15, 2008. The redesigned AIM for Mac is a full universal binary Cocoa API application that supports both Tiger and Leopard  Mac OS X 10.4.8 (and above) or Mac OS X 10.5.3 (and above). On October 1, 2009, AOL released AIM 2.0 for Mac.
+AIM real-time IM[edit]
+This feature is available for AIM 7 and allows for a user to see what the other is typing as it is being done. It was developed and built with assistance from Trace Research and Development Centre at University of Wisconsin-Madison and Gallaudet University. The application provides visually impaired users the ability to convert messages from text (words) to speech.[30] For the application to work users must have AIM 6.8 or higher, as it is not compatible with older versions of AIM software, AIM for Mac or iChat.[30]
+AIM to mobile (messaging to phone numbers)[edit]
+This feature allows text messaging to a phone number (text messaging is less functional than instant messaging).[31]
+Discontinued features[edit]
+AIM for Phoneline[edit]
+AIM Phoneline was a Voice over IP PC-PC, PC-Phone and Phone-to-PC service[32] provided via the AIM application. It was also known to work with Apple's iChat Client.
+Launched on May 16, 2006, AIM Phoneline provided users the ability to have several local numbers, allowing AIM users to receive free incoming calls.[33] The service allowed users to make calls to landlines and mobile devices through the use of a computer. The service, however, was only free for receiving and AOL charged users $14.95 a month for unlimited calling plan.[34]
+In order to use AIM Phoneline users had to install the latest free version of AIM Triton software and needed a good set of headphones with a boom microphone. It could take several days after a user signed up before it started working.[34]
+The service provided users with many interfaces such as Auto Action APIs, Ringback Tone APIs and Screen Name Services API that made the AIM Phoneline a great service.[35]
+On January 13, 2009, the service was officially closed. The closing of the free service caused the number associated with the service to be disabled and not transferrable for a different service.[36]
+AIM Call Out[edit]
+AIM Call Out is a discontinued Voice over IP PC-PC, PC-Phone and Phone-to-PC service provided by AOL via its AIM application that replaced the defunct AIM Phoneline service in November 2007.[37] It did not depend on the AIM client and could be used with only an AIM screenname via the WebConnect feature or a dedicated SIP device. The AIM Call Out service was shut down on March 25, 2009.[38]
+Security[edit]
+On November 4, 2014, AIM scored one out of seven points on the Electronic Frontier Foundation's secure messaging scorecard. AIM received a point for encryption during transit but lost points because communications are not encrypted with a key the provider doesn't have access to (i.e. the communications are not end-to-end encrypted), users can't verify contacts' identities, past messages are not secure if the encryption keys are stolen (i.e. the service does not provide forward secrecy), the code is not open to independent review (i.e. the code is not open-source), the security design is not properly documented, and there has not been a recent independent security audit.[39][40] BlackBerry Messenger, Ebuddy XMS, Hushmail, Kik Messenger, Skype, Viber, and Yahoo Messenger also scored one out of seven points.[39]
+References[edit]
+
+
+^ Abbruzzese, Jason. "The Rise and Fall of AIM, the Breakthrough AOL Never Wanted". mashable.com. Retrieved January 15, 2017. 
+^ a b Albers, Michael. "Our Yellow Running Man is Ready to Retire". AOL Instant Messenger (AIM) on Tumblr. Oath Inc. Retrieved October 5, 2017. 
+^ Abbruzzese, Jason. "The Rise and Fall of AIM, the Breakthrough AOL Never Wanted". Mashable.com. 2014-04-05.
+^ "IM Market Share - BigBlueBall Forums". Bigblueball.com. Archived from the original on October 30, 2010. Retrieved December 4, 2010. 
+^ Warren, Tom (April 21, 2014). "Inside Microsoft's '90s chat war with AOL". theverge.com. Retrieved January 15, 2017. 
+^ "Chat Wars". nplusonemag.com. March 25, 2014. Retrieved January 15, 2017. 
+^ "AIM's Windows Mobile chat app nails a bullseye - The Download Blog - CNET Download.com". cnet.com. Retrieved January 15, 2017. 
+^ Geller, Jonathan S. (October 2, 2007). "Mobile IM clients: Sidekick, Helio Ocean, BlackBerry, iPhone, and more". bgr.com. Retrieved January 15, 2017. 
+^ "Products AIM". Products AIM. Retrieved December 4, 2010. 
+^ "OPSWAT Market Share Report June 2011" (PDF). opswat.com. Retrieved August 11, 2011. 
+^ "The Rise and Fall of AIM, the Breakthrough AOL Never Wanted". Mashable. 
+^ Biddle, Sam. "AIM Is (Unofficially) Dead (Updated)". gizmodo.com. Retrieved January 15, 2017. 
+^ "AIM Sunset". AOL Help Article. Retrieved October 6, 2017. 
+^ Molina, Brett (October 6, 2017). "RIP AIM: AOL Instant Messenger dies in December". USA Today. Retrieved October 6, 2017. 
+^ LaFrance, Adrienne. "The Story Behind AOL's Iconic Yellow Running Man". theatlantic.com. Retrieved January 15, 2017. 
+^ "AOL Designer Explains the Company's Iconic Yellow Running Man Logo". complex.com. Retrieved January 15, 2017. 
+^ "AOL's Running Man takes part in London Marathon in Support of Free The Children". aol.co.uk. Retrieved January 15, 2017. 
+^ Florian Jensen (2008-01-17). "AOL adopting XMPP aka Jabber". Archived from the original on January 20, 2008. Retrieved 2008-01-17. 
+^ "AOL XMPP Gateway". 2011-05-14. Archived from the original on May 22, 2011. Retrieved 2011-05-14. 
+^ "Fwd: AOL". 2017-03-01. 
+^ a b c d Brandon De Hoyos. "AIM Privacy -- Terms of Service Policy -- AIM Privacy". About.com Tech. Retrieved August 10, 2015. 
+^ "Integrate Your Site with AIM in 3 Easy Steps" (PDF). AOL Developer Network. AOL Inc. p. 2. Archived (PDF) from the original on July 26, 2011. Retrieved August 9, 2011. 
+^ "tries out new IM chat bot". CNET. 2003-01-27. Retrieved 2015-10-27. 
+^ a b "Reviews of AOL Instant Messenger for Windows". 2011-01-08. Retrieved 2012-03-28. 
+^ "Apple Releases iPhone SDK, Demos Spore, Instant Messaging". Mac Rumors. 2008-03-06. Retrieved 2010-12-04. 
+^ "AOL Overhauls AIM, Adds New iPhone App". PC Magazine. 2011-11-16. Retrieved 2012-03-25. 
+^ "AIM for iPhone 5.0.5". Softpedia. 2012-03-20. Archived from the original on 2011-12-27. Retrieved 2012-03-25. 
+^ "AIM for iPad Approved, Screenshot". MacStories. 2010-04-01. Retrieved 2012-03-25. 
+^ "www.aim.com/products/express". Aim.com. Archived from the original on December 5, 2010. Retrieved 2010-12-04. 
+^ a b "What is Real-Time IM? Source: AOL Help". aniesoft.com. Retrieved January 15, 2017. 
+^ "How-To use AIM to send a Text Message to a phone". engadget.com. July 13, 2004. 
+^ "Press Releases". Retrieved August 10, 2015. 
+^ "AIM Phoneline: Free Phone number for AOL Messenger users". Retrieved August 10, 2015. 
+^ a b "First Look: AIM Phoneline and Skype 2.5". PCWorld. June 19, 2006. Retrieved August 10, 2015. 
+^ "AIM Phoneline". ProgrammableWeb. Retrieved August 10, 2015. 
+^ "Free AIM Phoneline Service Closing on January 13, 2009 - VOIP Tech Chat - DSLReports Forums". Retrieved August 10, 2015. 
+^ "Looking for AIM Phoneline?". Aimphoneline.com. Retrieved 2008-10-02. 
+^ "AOL Voice Services no longer offers new registrations". AOL.com. Retrieved 2014-12-18. 
+^ a b "Secure Messaging Scorecard. Which apps and tools actually keep your messages safe?". Electronic Frontier Foundation. November 4, 2014. Retrieved June 1, 2015. 
+^ "Only 6 Messaging Apps Are Truly Secure". PC Magazine. November 5, 2014. Retrieved January 8, 2015. 
+
+
+External links[edit]
+
+Official website
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Instant messaging
+
+
+
+Protocols
+(comparison)
+
+
+
+
+Open
+
+
+
+IMPP
+IRC
+Matrix
+MTProto
+RetroShare
+Signal Protocol
+SIP
+
+MSRP
+SIMPLE
+
+
+Tox
+XMPP
+
+Jingle
+WFP
+
+
+Zephyr
+DDP
+
+
+
+
+
+Closed
+
+
+
+MSNP
+OSCAR
+
+TOC
+
+
+Skype
+YMSG
+
+
+
+
+
+
+
+
+Services
+
+
+
+AIM
+BAND
+BlackBerry Messenger
+Discord
+Facebook Messenger
+Google Allo
+Google Hangouts
+Google Talk
+GroupMe
+Hike Messenger
+HipChat
+ICQ
+iGap
+iMessage
+IRC Networks
+KakaoTalk
+Kik
+Libon
+Line
+Microsoft Messenger service
+Nimbuzz
+ooVoo
+Palringo
+Signal
+Skype
+Skype Qik
+Slack
+Snapchat
+Tango
+Telegram
+QQ
+Threema
+Tox
+Upptalk
+Veon
+Viber
+WeChat
+WhatsApp
+Wickr
+Windows Messenger service
+Yahoo! Messenger
+
+
+
+
+
+Clients
+(comparison)
+
+
+
+
+Single protocol
+
+
+
+Allo
+AIM
+Baidu Hi
+BlackBerry Messenger
+CSipSimple
+Facebook Messenger
+FaceTime
+Fetion
+Gadu-Gadu
+GroupMe
+IBM Sametime
+ICQ
+IMVU
+Linphone
+Palringo
+RetroShare
+Ricochet
+Ring
+Signal
+Skype
+Telegram
+Tencent QQ
+Tox
+WeChat
+WhatsApp
+Wickr
+Wire
+Yahoo! Messenger
+
+
+
+
+
+Multi-protocol
+
+
+
+Adium
+Ayttm
+BitlBee
+Centericq
+eBuddy
+Empathy
+Fire
+Gizmo5
+Instantbird
+Jitsi
+Kopete
+Messages/iChat
+Miranda IM
+Nimbuzz
+Pidgin
+QIP 2010
+Skype for Business
+Trillian
+Telepathy
+Upptalk
+Xfire
+
+
+
+
+
+XMPP (Jabber)
+
+
+
+Bombus
+ChatSecure
+Conversations
+Facebook Chat
+Gajim
+Google Talk
+Psi
+Tkabber
+Spark
+
+
+
+
+
+MSNP
+
+
+
+aMSN
+emesene
+Windows Live Messenger
+Windows Messenger
+Skype
+
+
+
+
+
+
+
+
+See also
+
+
+
+Backchannel
+Buddy profile
+Chat log
+Chatbot
+Contact list
+Emoticon
+File sharing
+Instant message service center
+LAN messenger
+Mobile instant messaging
+Presence information
+Shoutbox
+SMS language
+Status message
+Videotelephony
+Voice over IP
+Webcam
+Web chat
+Circuit
+eXo Platform
+FirstClass
+Flock
+Fuze Box
+Glip
+Hall.com
+Lua
+Yammer
+
+
+
+
+
+
+
+
+
+
+
+
+v
+t
+e
+
+
+Oath Inc.
+
+
+
+Brands
+
+
+
+
+AOL
+
+
+
+Alto Mail
+Cambio.com
+Engadget
+HuffPost
+MapQuest
+Moviefone
+RYOT
+TechCrunch
+
+
+
+
+
+Yahoo!
+
+
+
+BrightRoll
+Flickr
+Polyvore
+Tumblr
+
+
+
+
+
+
+
+
+Corporate
+
+
+
+Verizon Communications
+
+
+
+
+
+
+
+
+
+
+ 
+						Retrieved from "https://en.wikipedia.org/w/index.php?title=AIM_(software)&oldid=808374009"					
+Categories: 1997 softwareAIM clientsAndroid (operating system) softwareAOLBlackBerry softwareClassic Mac OS instant messaging clientsComputer-related introductions in 1997Internet properties disestablished in 2017Cross-platform softwareInstant messaging clientsIOS softwareMacOS instant messaging clientsOnline chatSymbian softwareUnix instant messaging clientsVideotelephonyWindows instant messaging clientsHidden categories: Use mdy dates from October 2017Articles containing potentially dated statements from 2006All articles containing potentially dated statementsArticles containing potentially dated statements from June 2011All articles with unsourced statementsArticles with unsourced statements from December 2010Articles with unsourced statements from January 2014Official website different in Wikidata and Wikipedia 
+
+
+
+Navigation menu
+
+
+Personal tools
+
+Not logged inTalkContributionsCreate accountLog in 
+
+
+
+Namespaces
+
+Article
+Talk
+
+
+
+
+Variants
+
+
+
+
+
+
+
+
+
+Views
+
+Read
+Edit
+View history
+
+
+
+More
+
+
+
+
+
+
+
+Search
+
+
+
+ 
+
+
+
+
+
+
+
+Navigation
+
+
+Main pageContentsFeatured contentCurrent eventsRandom articleDonate to WikipediaWikipedia store 
+
+
+
+Interaction
+
+
+HelpAbout WikipediaCommunity portalRecent changesContact page 
+
+
+
+Tools
+
+
+What links hereRelated changesUpload fileSpecial pagesPermanent linkPage informationWikidata itemCite this page 
+
+
+
+Print/export
+
+
+Create a bookDownload as PDFPrintable version 
+
+
+
+Languages
+
+
+DeutschEspaolEsperantoFranaisItalianoLumbaartMagyarNederlandsPolskiPortugusSloveninaSloveninaSuomiSvenskaTrkeTing Vit 
+Edit links 
+
+
+
+
+
+ This page was last edited on 2 November 2017, at 14:01.
+Text is available under the Creative Commons Attribution-ShareAlike License;
+additional terms may apply.  By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+
+Privacy policy
+About Wikipedia
+Disclaimers
+Contact Wikipedia
+Developers
+Cookie statement
+Mobile view
+
+
+
+ 
+
+ 
+
+
+
+
+
+
