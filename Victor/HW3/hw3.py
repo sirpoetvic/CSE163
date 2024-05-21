@@ -39,8 +39,8 @@ def main():
 
 def compare_bachelors_1980(data):
     """
-    Computes the percentages of men and women who achieved a minimum of a Bachelor's
-    degree in 1980.
+    Computes the percentages of men and women who achieved a minimum of a
+    Bachelor's degree in 1980.
 
     Args:
         data (DataFrame): DataFrame of csv
@@ -115,12 +115,8 @@ def plot_hispanic_min_degree(data):
     hs_mask = data[year & hs & sex]
     b_mask = data[year & b & sex]
 
-    first = sns.regplot(
-        data=hs_mask, x="Year", y="Hispanic", label="High School"
-    )
-    second = sns.regplot(
-        data=b_mask, x="Year", y="Hispanic", label="Bachelor's"
-    )
+    sns.regplot(data=hs_mask, x="Year", y="Hispanic", label="High School")
+    sns.regplot(data=b_mask, x="Year", y="Hispanic", label="Bachelor's")
     plt.title("Percentage of ")
     plt.xlabel("Year")
     plt.ylabel("Percentage")
