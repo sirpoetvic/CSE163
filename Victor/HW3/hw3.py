@@ -1,15 +1,17 @@
 """
-Your name
-class
-file description
+Victor Wong
+CSE163
+HW3
 """
 
 import os
 import tempfile
-from matplotlib import legend
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
 
 os.environ["MPLCONFIGDIR"] = tempfile.gettempdir()
 
@@ -27,7 +29,9 @@ os.environ["MPLCONFIGDIR"] = tempfile.gettempdir()
 
 
 def main():
-    data = pd.read_csv("Victor\\HW3\\nces-ed-attainment.csv", na_values=["---"])
+    data = pd.read_csv(
+        "Victor\\HW3\\nces-ed-attainment.csv", na_values=["---"]
+    )
     sns.set()
     plot_hispanic_min_degree(data)
     # Call your functions here
@@ -71,7 +75,9 @@ def top_2_2000s(data, sex="A"):
     """
     # Mask considers data whose year is between 2000 and 2010 inclusive,
     # and sex as given sex
-    mask = (data["Year"] >= 2000) & (data["Year"] <= 2010) & (data["Sex"] == sex)
+    mask = (
+        (data["Year"] >= 2000) & (data["Year"] <= 2010) & (data["Sex"] == sex)
+    )
     # Applying mask
     masked_data = data[mask]
     # Grouping by the min degree, using the mean of percentage over all of
@@ -103,13 +109,18 @@ def bar_chart_high_school(data):
 
 def plot_hispanic_min_degree(data):
     year = (data["Year"] >= 1990) & (data["Year"] <= 2010)
+    sex = data["Sex"] == "A"
     hs = data["Min degree"] == "high school"
     b = data["Min degree"] == "bachelor's"
-    hs_mask = data[year & hs]
-    b_mask = data[year & b]
+    hs_mask = data[year & hs & sex]
+    b_mask = data[year & b & sex]
 
-    first = sns.regplot(data=hs_mask, x="Year", y="Hispanic", label="High School")
-    second = sns.regplot(data=b_mask, x="Year", y="Hispanic", label="Bachelor's")
+    first = sns.regplot(
+        data=hs_mask, x="Year", y="Hispanic", label="High School"
+    )
+    second = sns.regplot(
+        data=b_mask, x="Year", y="Hispanic", label="Bachelor's"
+    )
     plt.title("Percentage of ")
     plt.xlabel("Year")
     plt.ylabel("Percentage")
@@ -118,13 +129,29 @@ def plot_hispanic_min_degree(data):
         "Percentages of Hispanic degrees from 1990-2010 (High School & Bachelor's)"
     )
     plt.legend()
-    plt.savefig("Victor\\HW3\\plot_hispanic_min_degree.png", bbox_inches="tight")
+    plt.savefig(
+        "Victor\\HW3\\plot_hispanic_min_degree.png", bbox_inches="tight"
+    )
 
 
 def fit_and_predict_degrees(data):
     pre_filter = ["Year", "Min degree", "Sex", "Total"]
     data = data.loc[:, pre_filter].dropna()
-    features = pd.get_dummies(data)
+    features = data.loc[:, data.columns != "Total"]
+    features = pd.get_dummies(features)
+    labels = data["Total"]
+
+    features_train, features_test, labels_train, labels_test = (
+        train_test_split(features, labels, test_size=0.2)
+    )
+
+    model = DecisionTreeRegressor()
+    model.fit(features_train, labels_train)
+
+    test_prediction = model.predict(features_test)
+
+    mse = mean_squared_error(labels_test, test_prediction)
+    return mse
 
 
 if __name__ == "__main__":

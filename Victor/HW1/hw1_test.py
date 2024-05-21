@@ -3,7 +3,8 @@ Victor Wong
 Period 5
 HW1 assignment tester file
 """
-import hw1
+
+import Victor.HW1.hw1 as hw1
 
 from cse163_utils import assert_equals
 
@@ -60,7 +61,9 @@ def test_reformat_date():
     """
     Tests the reformat_date method
     """
-    assert_equals("31/12/1998", hw1.reformat_date("12/31/1998", "M/D/Y", "D/M/Y"))
+    assert_equals(
+        "31/12/1998", hw1.reformat_date("12/31/1998", "M/D/Y", "D/M/Y")
+    )
     assert_equals("4/2000", hw1.reformat_date("0/2000/4", "D/Y/M", "M/Y"))
     assert_equals("2", hw1.reformat_date("3/2", "M/D", "D"))
 

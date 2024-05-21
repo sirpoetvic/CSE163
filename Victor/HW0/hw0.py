@@ -4,12 +4,11 @@ UW CSE163
 Implements the functions for HW0
 """
 
-"""Returns linear interpolation of a and b,
-of c
-"""
-
 
 def funky_sum(a, b, mix):
+    """Returns linear interpolation of a and b,
+    of c
+    """
     if mix <= 0:
         return a
     elif mix >= 1:
@@ -17,11 +16,8 @@ def funky_sum(a, b, mix):
     return (1 - mix) * a + mix * b
 
 
-"""Returns the sum of all numbers from 0 (inclusive) to n (inclusive)"""
-
-
 def total(n):
-    """"""
+    """Returns the sum of all numbers from 0 (inclusive) to n (inclusive)"""
     if n < 0:
         return None
     else:
