@@ -88,7 +88,7 @@ def limit_list_to_range_fast(items, low, high):
 
 def species_count_set(data):
     """
-    Fropm HW2: species_count returns the number of unique Pokemon
+    From HW2: species_count returns the number of unique Pokemon
     species (determined by the name attribute) found in
     the dataset. The data is a list of dictionaries.
     """

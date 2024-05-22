@@ -19,7 +19,6 @@ def get_primes(max):
     Step 3 { 2, 3,    5,    7,           11,     13         }  # remove multiples of 3
     Etc.
     """
-    # Your implementation goes here
     return_set = set()
     for i in range(2, max):
         is_prime = True
@@ -37,9 +36,6 @@ def test_set_of_primes():
     fiddy = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47}
     assert_equals(fiddy, get_primes(50))
     print("set_of_primes Success")
-
-
-# O(n)
 
 
 def hailstone_seq(n):
@@ -63,7 +59,7 @@ def main():
     # once your implementation of getting primes is complete,
     # graph its performance
     test_set_of_primes()
-    # graph_prime_performance()
+    graph_prime_performance()
 
 
 if __name__ == "__main__":

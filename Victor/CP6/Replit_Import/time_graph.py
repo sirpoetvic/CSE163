@@ -42,7 +42,8 @@ class TimeGraph:
         ax.set_xlabel("n")
         ax.set_title("Growth of time for Method:" + method)
         ax.legend()
-        fig.savefig(method + ".png")
+        # Changed to save in a particular area in workspace
+        fig.savefig("Victor\\CP6\\" + method + ".png")
 
     def time_and_graph(self, fn, method, max_iters=16):
         print("\n*** Measuring and plotting", method, "***\n")
@@ -50,17 +51,15 @@ class TimeGraph:
         # self._print_stats(ns, times)
         self._plot_line(ns, times, method)
 
-    """
     def _print_stats(self, ns, times):
         p, e, *_ = np.polyfit(ns, times, 1, full=True)
-        print(f'Line: y={p[0]}x + {p[1]}')
-        print(f'Linear Sq Error {e[0]}')
+        print(f"Line: y={p[0]}x + {p[1]}")
+        print(f"Linear Sq Error {e[0]}")
         p, e, *_ = np.polyfit(ns, times, 2, full=True)
-        if (p[0] < 0):
-            print('Inverted Quadratic. Can\'t be right!')
-        print(f'Quadratic: y={p[0]}x^2 + {p[1]}x + {p[2]}')
-        print(f'Quadratic Sq Error {e[0]}')
-    """
+        if p[0] < 0:
+            print("Inverted Quadratic. Can't be right!")
+        print(f"Quadratic: y={p[0]}x^2 + {p[1]}x + {p[2]}")
+        print(f"Quadratic Sq Error {e[0]}")
 
     def _plot_line(self, ns, times, method):
         """
@@ -79,4 +78,5 @@ class TimeGraph:
         ax1.set_ylabel("Time (seconds)")
         ax2.set_ylabel("")
         fig.suptitle("Growth of time: " + method)
-        plt.savefig(method + ".png", bbox_inches="tight")
+        # Changed to save in a particular area in workspace
+        plt.savefig("Victor\\CP6\\" + method + ".png", bbox_inches="tight")
