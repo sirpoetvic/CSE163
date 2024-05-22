@@ -49,5 +49,9 @@ class SearchEngine:
             query (str): _description_
         """
         tokens = query.split()
-        for token in tokens:
-            
+        normalized_tokens = normalize_token(token) for token in tokens
+        # for each normalized token, get the tfidf statistic
+
+        # sort by tfidf statistics
+
+        # add all the tfidf statistics together
