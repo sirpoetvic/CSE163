@@ -1,4 +1,11 @@
 import math
+import re
+
+
+def normalize_token(token):
+    # remove non-alphabetic characters using a regular expression
+    # don't forget to handle upper vs lower case letters. Let's go low.
+    return re.sub(r"\W+", "", token.lower())
 
 
 def check_approx_equals(expected, received):
