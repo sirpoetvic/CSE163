@@ -2,6 +2,7 @@ from cse163_utils import assert_equals
 from math import sqrt, ceil
 from time_graph import TimeGraph
 
+
 # Implement get_primes
 def get_primes(max):
     '''
