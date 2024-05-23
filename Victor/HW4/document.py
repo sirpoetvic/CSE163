@@ -1,0 +1,65 @@
+"""
+Victor Wong
+CSE163
+Document class
+"""
+
+from cse163_utils import normalize_token
+
+
+class Document:
+    """
+    Document class holds a dict variable that holds the frequency of unique,
+    normalized words strings.
+    """
+
+    def __init__(self, path):
+        """
+        Takes a path to a document and initializes the document data.
+        precompute term frequency
+
+        Args:
+            path (string): string of the path of the document
+        """
+
+        # might need a dict containing unique normalized words in doc
+        self._doc_dict = dict()
+        # path file name
+        self._file_name = path
+
+        with open(path, encoding="r") as f:
+            lines = f.readlines()
+            for line in lines:
+                tokens = line.split()
+                for token in tokens:
+                    normal = normalize_token(token)
+                    if normal in self._doc_dict:
+                        self._doc_dict[normal] += 1
+                    else:
+                        self._doc_dict[normal] = 1
+
+    def term_frequency(self, term) -> int:
+        """
+        return the number of occurences of a term in the doc
+
+        Args:
+            term (string): term
+
+        Returns:
+            int: number of occurences of term
+        """
+        if term not in self._doc_dict:
+            return 0
+        return term[term]
+
+    def get_words(self) -> list:
+        """
+        Returns a list of the unique, normalized words in the document
+
+        Returns:
+            list: list of unique, normalized words in the document
+        """
+        return list(self._doc_dict)
+
+    def get_path(self) -> str:
+        return self._file_name

@@ -4,7 +4,7 @@ UW CSE163
 Tests the functions for HW0
 """
 
-import hw0
+import Victor.HW0.hw0 as hw0
 
 from cse163_utils import assert_equals
 
@@ -28,10 +28,10 @@ def test_total():
 
 
 def test_swip_swap():
-    assert_equals('offbar', hw0.swip_swap('foobar', 'f', 'o'))
-    assert_equals('foocar', hw0.swip_swap('foobar', 'b', 'c'))
-    assert_equals('foobar', hw0.swip_swap('foobar', 'z', 'c'))
-    assert_equals('oumbj', hw0.swip_swap('jumbo', 'j', 'o'))
+    assert_equals("offbar", hw0.swip_swap("foobar", "f", "o"))
+    assert_equals("foocar", hw0.swip_swap("foobar", "b", "c"))
+    assert_equals("foobar", hw0.swip_swap("foobar", "z", "c"))
+    assert_equals("oumbj", hw0.swip_swap("jumbo", "j", "o"))
 
 
 def main():
@@ -40,5 +40,5 @@ def main():
     test_swip_swap()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
