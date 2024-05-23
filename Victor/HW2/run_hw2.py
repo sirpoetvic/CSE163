@@ -7,14 +7,14 @@ Testing cases only
 from cse163_utils import assert_equals
 from cse163_utils import parse
 
-import hw2_manual
-import hw2_pandas
+import Victor.HW2.hw2_manual as hw2_manual
+import Victor.HW2.hw2_pandas as hw2_pandas
 import pandas as pd
 
 
 file = parse("pokemon_test.csv")
-data = pd.read_csv("Victor\\HW2\\pokemon_test.csv")
-victor_data = pd.read_csv("Victor\\HW2\\victor_test.csv")
+data = pd.read_csv("Victor\\HW3\\pokemon_test.csv")
+victor_data = pd.read_csv("Victor\\HW3\\victor_test.csv")
 victor_file = parse("victor_test.csv")
 
 
