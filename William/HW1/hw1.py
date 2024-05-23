@@ -31,7 +31,7 @@ def count_divisible_digits(n, m):
     """
     counter, n_abs = 0, abs(n)
 
-    if m == 0 or n == 0:
+    if (m == 0) or (n == 0):
         return counter
 
     while n_abs > 0:
