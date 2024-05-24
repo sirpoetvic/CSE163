@@ -2,7 +2,6 @@ from cse163_utils import assert_equals
 from math import sqrt, ceil
 from time_graph import TimeGraph
 
-
 # Implement get_primes
 def get_primes(max):
     '''
@@ -44,7 +43,7 @@ def get_primes(max):
 
 # Test get_primes as necessary
 def test_set_of_primes():
-    fiddy = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 }
+    fiddy = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47}
     assert_equals(fiddy, get_primes(50))
     print('set_of_primes Success')
 
@@ -58,7 +57,7 @@ def hailstone_seq(n):
     End the sequence when n == 1
     '''
     # Your implementation goes here
-    return { 1: 1, 2: 2, 3: 8, 4: 3}
+    return {1: 1, 2: 2, 3: 8, 4: 3}
 
     
 def graph_prime_performance(timer):
