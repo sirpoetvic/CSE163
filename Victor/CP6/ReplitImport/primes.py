@@ -29,7 +29,7 @@ def get_primes(max: int):
 
     # Sieve of Eratosthenes implementation
     primes = set(range(2, max))
-    for i in range(2, int(max**0.5) + 1):
+    for i in range(2, int(max**0.5)):
         if i in primes:
             for j in range(i * i, max, i):
                 primes.discard(j)
