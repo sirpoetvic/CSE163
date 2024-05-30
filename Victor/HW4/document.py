@@ -52,9 +52,9 @@ class Document:
         Returns:
             int: number of occurences of term
         """
-        if term not in self._doc_dict:
-            return 0
-        return self._doc_dict[term] / self._total_words
+        if term in self._doc_dict:
+            return self._doc_dict[term] / self._total_words
+        return 0
 
     def get_words(self) -> list:
         """
