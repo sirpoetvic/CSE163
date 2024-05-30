@@ -12,7 +12,8 @@ from document import Document
 
 def test_document(paths):
     assert_equals("William\\HW4\\test_corpus\\document1.txt", paths.get_path())
-    assert_equals(.25, paths.term_frequency("like"))
+    assert_equals(['i', 'love', 'bruno'], paths.get_words())
+    assert_equals(1/3, paths.term_frequency("love"))
 
 
 def main():
@@ -21,9 +22,10 @@ def main():
     Runs all testing functions
     """
     path = Document("William\\HW4\\test_corpus\\document1.txt")
-    test_document(path)
     path2 = Document("William\\HW4\\test_corpus\\document2.txt")
-    test_document(path2)
+    path3 = Document("William\\HW4\\test_corpus\\document3.txt")
+    nsa = Document("William\\HW4\\test_corpus\\nsa.txt")
+    test_document(path)
 
 
 if __name__ == "__main__":
