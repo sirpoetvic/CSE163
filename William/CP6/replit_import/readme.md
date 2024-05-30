@@ -26,16 +26,14 @@ Does this meet your expectations as you examine the code? Explain.
 Feel free to do some online research of Sieve of Eratosthenes.
 
 ```
-I believe I did the "Sieve of Eratosthenes" algorithim in my solution. This was my "original," so my answers and thoughts stay the same. Not the slowest, but 
-probably not the fastest way?
+I believe I did the "Sieve of Eratosthenes" algorithim in my solution. This was my "original," so my answers and thoughts stay the same. Not the slowest, but probably not the fastest way?
 ```
 
 **Question #2**   
 Examine the `get_sum.png` graph. Explain what the graph is saying about the code 
 found in the method `get_sum`. What is the Big-O?
 ```
-The code in get_sum follows an O(n^2), since it follows the quadratic loop. This means that it isn't the most efficient. It makes sense that it is O(n^2) since
-the code has nested for loops; O(n) for the first loop, and for each of those, it is iterating another O(n), which is n^2. 
+The code in get_sum follows an O(n^2), since it follows the quadratic loop. This means that it isn't the most efficient. It makes sense that it is O(n^2) since the code has nested for loops; O(n) for the first loop, and for each of those, it is iterating another O(n), which is n^2. 
 ```
 
 **Question #3**   
