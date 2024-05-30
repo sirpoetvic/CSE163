@@ -26,8 +26,10 @@ class Document:
         self._doc_dict = dict()
         # path file name
         self._file_name = path
+        # total number of words in doc
+        self._total_words = 0
 
-        with open(path, encoding="r") as f:
+        with open(path) as f:
             lines = f.readlines()
             for line in lines:
                 tokens = line.split()
@@ -37,10 +39,12 @@ class Document:
                         self._doc_dict[normal] += 1
                     else:
                         self._doc_dict[normal] = 1
+                    self._total_words = self._total_words + 1
 
     def term_frequency(self, term) -> int:
         """
-        return the number of occurences of a term in the doc
+        return the number of occurences of a term in the doc divided by
+        the total number of terms in the doc
 
         Args:
             term (string): term
@@ -50,7 +54,7 @@ class Document:
         """
         if term not in self._doc_dict:
             return 0
-        return term[term]
+        return self._doc_dict[term] / self._total_words
 
     def get_words(self) -> list:
         """

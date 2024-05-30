@@ -33,7 +33,7 @@ def main():
         "Victor\\HW3\\nces-ed-attainment.csv", na_values=["---"]
     )
     sns.set()
-    plot_hispanic_min_degree(data)
+    print((compare_bachelors_1980(data)))
     # Call your functions here
 
 
@@ -57,8 +57,8 @@ def compare_bachelors_1980(data):
     # Note: This was my best attempt to print the DataFrame without the indexes
     # This function prints, rather than returning the df.
     # It also prints it as strings
-    df = masked_data.loc[:, ["Sex", "Total"]].to_string(index=False)
-    print(df)
+    df = masked_data.loc[:, ["Sex", "Total"]]
+    return df
 
 
 def top_2_2000s(data, sex="A"):
