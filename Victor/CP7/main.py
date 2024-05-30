@@ -1,13 +1,19 @@
+from itertools import count
 import geopandas as gpd  # noqa: F401
+import pandas as pd
 import matplotlib.pyplot as plt
 
 
 def create_south_america_png():
+    # Load the data
     countries = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
+
+    # Filter for South America
     south_america = countries[countries["CONTINENT"] == "South America"]
 
-    fig, ax = plt.subplots(1, 1, figsize=(15, 10))
-    south_america.plot(
+    fig, ax = plt.subplots(1, 1, figsize=(10, 10))
+    # Create the plot
+    ax = south_america.plot(
         column="POP_EST",
         legend=True,
         legend_kwds={
@@ -16,14 +22,21 @@ def create_south_america_png():
         },
         ax=ax,
     )
+
+    # Set the title
     ax.set_title("Population of South American Countries", fontsize=15)
+
+    # Save the figure
     plt.savefig("south_america.png")
 
 
 def create_small_and_rich_png():
+
     countries = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
+
     # Country considered rich if the GDP is greater than 500,000
     rich = countries["GDP_MD_EST"] >= 500000
+
     # Country considered small if the popoulation is less than 80,000,000
     small = countries["POP_EST"] < 80000000
     small_and_rich = countries[small & rich]
@@ -40,12 +53,32 @@ def create_small_and_rich_png():
         },
         ax=ax,
     )
+
+    # Save graphs
     plt.savefig("small_and_rich.png")
 
 
 def create_populations_png():
-    # Your code goes here!
-    pass
+    countries = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
+
+    # Filter down to just the columns of interest
+    populations = countries[["POP_EST", "CONTINENT", "SUBREGION", "geometry"]]
+    # 3 plots
+    fig, [ax1, ax2, ax3] = plt.subplots(3)
+
+    # Dissolve by desired area (subregion or continent)
+    populations_subregion = populations.dissolve(by="SUBREGION", aggfunc="sum")
+    populations_continent = populations.dissolve(by="CONTINENT", aggfunc="sum")
+
+    # Plotting regular (just by country)
+    populations.plot(column="POP_EST", legend=True, ax=ax1)
+
+    # Plotting other dissolved data
+    populations_subregion.plot(column="POP_EST", legend=True, ax=ax2)
+    populations_continent.plot(column="POP_EST", legend=True, ax=ax3)
+
+    # Save graphs
+    plt.savefig("populations.png")
 
 
 def main():
