@@ -13,5 +13,6 @@ from document import Document
 
 
 # This file is left blank for you to fill in with your tests!
-test = Document("Victor\\HW4\\test_corpus\\document1.txt")
-print(test.term_frequency("love"))
+
+
+main()
