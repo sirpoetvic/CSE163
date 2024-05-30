@@ -3,7 +3,7 @@ William Dinh
 Intermediate Data Programming
 """
 
-from William.HW4.cse163_utils import normalize_token
+from cse163_utils import normalize_token
 
 
 # add your code here
@@ -28,11 +28,11 @@ class Document:
                 tokens = content.split()
                 for token in tokens:
                     n = normalize_token(token)
-                    self._term_counting += 1
                     if n in self._docdict:
                         self._docdict[n] += 1
                     else:
                         self._docdict[n] = 1
+                    self._term_counting += 1
 
     def term_frequency(self, term):
         """_summary_
@@ -43,13 +43,11 @@ class Document:
         Returns:
             _type_: _description_
         """
-
-        if term not in self._docdict:
-            term = 0
-        else:
-            term = term.values()
-            term_freq = term / self._term_counting
-        return term_freq
+        if term in self._docdict:
+            # access the key value pair
+            term = self._docdict[term]
+            return term / self._term_counting
+        return 0
 
     def get_path(self):
         """_summary_
