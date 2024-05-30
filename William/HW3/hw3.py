@@ -25,7 +25,6 @@ def compare_bachelors_1980(data):
         data (DataFrame) = to be modified and filtered
     """
     # Filter the data for Bachelor's degrees in or more 1980 for both sexes
-<<<<<<< HEAD
     correct_year = data["Year"] == 1980
     male_female = data["Sex"] != "A"
     deg = data["Min degree"] == "bachelor's"
@@ -33,21 +32,6 @@ def compare_bachelors_1980(data):
     df = data[correct_year & male_female & deg][["Sex", "Total"]]
 
     df.groupby("Sex")["Total"].sum()
-
-=======
-    sort_grad = data[(data["Year"] == 1980) & (data["Min degree"] == "bachelor's")]
-    # Sorts columns by sex and total
-    sort_data = sort_grad.loc[:, ["Sex", "Total"]]
-    # Takes columns previously, sorts by M and F, then sums the total
-    # Which is the %. sort_gender is a series, split like this for flake8 sake
-    sort_gender = (
-        sort_data[(sort_data["Sex"] == "M") | (sort_data["Sex"] == "F")]
-        .groupby("Sex")["Total"]
-        .sum()
-    )
-    # convert sort_gender into a dataframe again
-    df = pd.DataFrame(sort_gender, columns=["Total"])
->>>>>>> 09efa1f45e3fb0d46b327e13913f734600346c2a
     return df
 
 
@@ -189,22 +173,14 @@ def main():
     data = pd.read_csv("William\\HW3\\nces-ed-attainment.csv", na_values=["---"])
     sns.set_theme()
     # Call your functions here
-    print(compare_bachelors_1980(data))
-    print()
+    # print(compare_bachelors_1980(data))
+    # print()
     print(top_2_2000s(data, "A"))
-<<<<<<< HEAD
     # line_plot_bachelors(data)
     # bar_chart_high_school(data)
     # plot_hispanic_min_degree(data)
     # print()
     # print(fit_and_predict_degrees(data))
-=======
-    line_plot_bachelors(data)
-    bar_chart_high_school(data)
-    plot_hispanic_min_degree(data)
-    print()
-    print(fit_and_predict_degrees(data))
->>>>>>> 09efa1f45e3fb0d46b327e13913f734600346c2a
 
 
 if __name__ == "__main__":
