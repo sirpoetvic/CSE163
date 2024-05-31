@@ -6,8 +6,6 @@ Intermediate Data Programming
 from cse163_utils import normalize_token
 
 
-# add your code here
-
 
 class Document:
     """_summary_
@@ -44,9 +42,7 @@ class Document:
             _type_: _description_
         """
         if term in self._docdict:
-            # access the key value pair
-            term = self._docdict[term]
-            return term / self._term_counting
+            return self._docdict[term] / self._term_counting
         return 0
 
     def get_path(self):

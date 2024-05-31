@@ -4,6 +4,7 @@
 from search_engine import SearchEngine
 import unittest
 
+
 def main():
     print('Welcome to 6oog13!!')
     directory = input('Please enter a the name of a directory: ')
@@ -29,11 +30,13 @@ def main():
         while not (answer == 'y' or answer == 'n'):
             answer = input('Would you like to search another term (y/n) ')
 
+
 def run_tests():
     test_loader = unittest.TestLoader()
     tests = test_loader.discover("test")
     test_runner = unittest.runner.TextTestRunner()
     result = test_runner.run(tests)
-    
+
+
 if __name__ == '__main__':
     main()
