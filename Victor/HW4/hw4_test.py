@@ -1,5 +1,7 @@
 """
-Student Name
+Victor Wong
+CSE163 Data Science
+Testing file
 """
 
 # this file is excluded from flake8
@@ -13,6 +15,9 @@ from search_engine import SearchEngine
 
 
 def test_term_frequency():
+    """
+    test the document class ability to get the term frequency (tf)
+    """
     assert_equals(
         0.25,
         Document("test_corpus\\document2.txt").term_frequency("dog"),
@@ -20,6 +25,9 @@ def test_term_frequency():
 
 
 def test_get_path():
+    """
+    tests the document class ability to get the document path
+    """
     assert_equals(
         "test_corpus\\document1.txt",
         Document("test_corpus\\document1.txt").get_path(),
@@ -27,6 +35,9 @@ def test_get_path():
 
 
 def test_get_words():
+    """
+    tests the ability for the document class to collect words
+    """
     assert_equals(
         ["i", "love", "bruno"],
         Document("test_corpus\\document1.txt").get_words(),

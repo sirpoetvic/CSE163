@@ -1,6 +1,6 @@
 """
 Victor Wong
-CSE163
+CSE163 Data Science
 Document class
 """
 
@@ -67,4 +67,10 @@ class Document:
         return list(self._doc_dict)
 
     def get_path(self) -> str:
+        """
+        Returns the path of the current document
+
+        Returns:
+            str: _description_
+        """
         return self._file_name

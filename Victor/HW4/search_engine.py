@@ -1,6 +1,6 @@
 """
 Victor Wong
-CSE163
+CSE163 Data Science
 SearchEngine Class
 """
 
