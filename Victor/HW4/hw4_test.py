@@ -28,6 +28,13 @@ def test_get_path():
     )
 
 
+def test_get_words():
+    assert_equals(
+        ["i", "love", "bruno"],
+        Document("Victor\\HW4\\test_corpus\\document1.txt").get_words(),
+    )
+
+
 def main():
     # Call your test functions here!
     """
@@ -35,6 +42,7 @@ def main():
     """
     test_term_frequency()
     test_get_path()
+    test_get_words()
 
 
 main()

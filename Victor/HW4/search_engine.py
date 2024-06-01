@@ -4,8 +4,11 @@ CSE163
 SearchEngine Class
 """
 
-from cse163_utils import normalize_token
 import math
+import os
+from cse163_utils import normalize_token
+from document import term_frequency
+from symbol import tfpdef
 
 
 class SearchEngine:
@@ -13,13 +16,20 @@ class SearchEngine:
     def __init__(self, path: str):
         # Documents are in a list so that it may be iterated upon
         self._documents = list()
+        # list of words, mapped to documents words are in
+        self._wordlist = dict()
 
-        for document in self._documents:
-            # check all documents to see if the word is present, and add the doc if the word is in there.
-            break  # temp block
+        directory = "/course/small_wiki/"
+        for filename in os.listdir(directory):
+            self._documents.append(os.path.join(directory, filename))
 
-        # number of docs is stored to help calculate IDF
-        self._num_docs = 0
+        for doc in self._documents:
+            for word in doc.get_words():
+                normalized = normalize_token(word)
+                if word in self._wordlist:
+                    self._wordlist[normalized].append(doc)
+                else:
+                    self._wordlist[normalized] = [doc]
 
     def _calculate_idf(self, item: str):
         """
@@ -32,13 +42,10 @@ class SearchEngine:
         Returns:
             int: inverse document frequency
         """
-        num_docs_with_term = 0
-        for doc in self._documents:
-            if item in doc:
-                num_docs_with_term += 1
-        if num_docs_with_term == 0:
+        if item not in self._wordlist:
             return 0
-        return math.log(self._num_docs / num_docs_with_term)
+        # logarithm total documents divided by documents with term
+        return math.log(len(self._documents) / len(self._wordlist[item]))
 
     def search(self, query: str):
         """
@@ -48,10 +55,24 @@ class SearchEngine:
         Args:
             query (str): _description_
         """
-        tokens = query.split()
-        normalized_tokens = normalize_token(token) for token in tokens
+        return_list = dict()
+        # word_tfidf = dict()
         # for each normalized token, get the tfidf statistic
-
-        # sort by tfidf statistics
+        words = query.split()
+        words = (normalize_token(token) for token in words)
+        for word in words:
+            num = self._calculate_idf(word)
+            if word in return_list:
+                return_list[word] = set(
+                    self._wordlist[word] + return_list[word]
+                )
+            else:
+                return_list[word] = [self._wordlist[word]]
+            # if word in word_tfidf:
+            #     word_tfidf[word] += num
+            # else:
+            #     word_tfidf[word] = num
+        # sort docs by tfidf statistics
 
         # add all the tfidf statistics together
+        pass
