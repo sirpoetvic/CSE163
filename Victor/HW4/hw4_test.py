@@ -15,28 +15,53 @@ from search_engine import SearchEngine
 def test_term_frequency():
     assert_equals(
         0.25,
-        Document("Victor\\HW4\\test_corpus\\document2.txt").term_frequency(
-            "dog"
-        ),
+        Document("test_corpus\\document2.txt").term_frequency("dog"),
     )
 
 
 def test_get_path():
     assert_equals(
-        "Victor\\HW4\\test_corpus\\document1.txt",
-        Document("Victor\\HW4\\test_corpus\\document1.txt").get_path(),
+        "test_corpus\\document1.txt",
+        Document("test_corpus\\document1.txt").get_path(),
     )
 
 
 def test_get_words():
     assert_equals(
         ["i", "love", "bruno"],
-        Document("Victor\\HW4\\test_corpus\\document1.txt").get_words(),
+        Document("test_corpus\\document1.txt").get_words(),
     )
 
 
-def test_get_inverted_index():
-    return SearchEngine("Victor\\HW4\\test_corpus").get_inverted_index()
+def test_search_engine():
+    engine = SearchEngine("test_cases")
+
+    # searching for a term in ALL documents
+    result = engine.search("the")
+    expected = [
+        "test_cases\\test1.txt",
+        "test_cases\\test2.txt",
+        "test_cases\\test3.txt",
+    ]
+    assert_equals(expected, result)
+
+    # searching for a term in SOME documents
+    result = engine.search("quick")
+    expected = [
+        "test_cases\\test1.txt",
+        "test_cases\\test3.txt",
+    ]
+    assert_equals(expected, result)
+
+    # searching for a term in ONE document
+    result = engine.search("slow")
+    expected = ["test_cases\\test2.txt"]
+    assert_equals(expected, result)
+
+    # searching for a term in NO documents
+    result = engine.search("superduperwowow")
+    expected = []
+    assert_equals(expected, result)
 
 
 def main():
@@ -47,7 +72,8 @@ def main():
     test_term_frequency()
     test_get_path()
     test_get_words()
-    print(test_get_inverted_index())
+    test_search_engine()
+    print("all good!")
 
 
 main()

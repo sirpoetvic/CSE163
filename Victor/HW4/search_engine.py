@@ -45,9 +45,6 @@ class SearchEngine:
         # logarithm total documents divided by documents with term
         return math.log(len(self._documents) / len(self._inverted_index[item]))
 
-    def get_inverted_index(self):
-        return self._inverted_index
-
     def search(self, query: str):
         """
         Returns a list of document paths sorted in descending order
@@ -76,9 +73,9 @@ class SearchEngine:
                 else:
                     # Add to the current tfidf for the current doc
                     valid_docs[doc] += tfidf
+        # sort the documents by their tfidf scores
         sorted_docs_with_scores = sorted(
             valid_docs.items(), key=lambda item: item[1], reverse=True
         )
-        sorted_docs = [doc.get_path() for doc, _ in sorted_docs_with_scores]
-
-        return sorted_docs
+        # return ONLY the document paths, excluding the tfidf part of the tuple
+        return [doc.get_path() for doc, _ in sorted_docs_with_scores]
