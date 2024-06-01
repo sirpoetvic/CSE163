@@ -44,41 +44,35 @@ def test_get_words():
     )
 
 
-def test_serach_test_corpus():
+def test_search_engine():
     """
-    Testing test_corpus with serach engine
+    Testing search engine with test_corpus_two
     """
-    engine = SearchEngine("William//HW4//test_corpus")
-    assert_equals(['William//HW4//test_corpus\\document3.txt',
-                   'William//HW4//test_corpus\\document1.txt',
-                   'William//HW4//test_corpus\\document2.txt'],
-                  engine.search("i"))
+    engine = SearchEngine("William\\HW4//test_corpus_two")
 
-    assert_equals(['William//HW4//test_corpus\\nsa.txt'],
-                  engine.search("cia"))
+    # search for a term that is in some documents
+    result1 = engine.search("Bruno")
+    expected1 = [
+        'William\\HW4//test_corpus_two\\doc1.txt',
+        'William\\HW4//test_corpus_two\\doc2.txt']
 
-    assert_equals(['William//HW4//test_corpus\\document1.txt'],
-                  engine.search("bruno"))
+    assert_equals(expected1, result1)
 
+    # search for a term that is in all documents
+    result2 = engine.search("the")
+    expected2 = ['William\\HW4//test_corpus_two\\doc3.txt',
+                 'William\\HW4//test_corpus_two\\doc2.txt'] 
+    assert_equals(expected2, result2)
 
-def test_serach_small_text():
-    """
-    Testing search engine with small_text
-    Must run in reasonable time.
-    """
-    engine = SearchEngine("William//HW4//small_text")
-    assert_equals(['William//HW4//small_text\\Black or White - Wikipedia.txt',
-                   'William//HW4//small_text\\Humberto Gatica - Wikipedia.txt'],
-                  engine.search("Bottrell"))
+    # no term in doc
+    result3 = engine.search("asdfhjlasdjflaksjd")
+    expected3 = []
+    assert_equals(expected3, result3)
 
-    assert_equals(['William//HW4//small_text\\Rhinoplasty - Wikipedia.txt',
-                   'William//HW4//small_text\\Michael Jackson - Wikipedia.txt'],
-                  engine.search("Rhinoplasty"))
-
-    assert_equals([['William//HW4//small_text\\Bob Corker - Wikipedia.txt',
-                    'William//HW4//small_text\\Orrin Hatch - Wikipedia.txt',
-                    'William//HW4//small_text\\Traditionalist conservatism - Wikipedia.txt']],
-                  engine.search("corker"))
+    # search for a term that appears in only one document
+    result4 = engine.search("musician")
+    expected4 = ['William\\HW4//test_corpus_two\\doc1.txt']
+    assert_equals(expected4, result4)
 
 
 def main():
@@ -89,8 +83,7 @@ def main():
     test_term_frequency()
     test_get_path()
     test_get_words()
-    test_serach_test_corpus()
-    test_serach_small_text()
+    test_search_engine()
 
 
 if __name__ == "__main__":
