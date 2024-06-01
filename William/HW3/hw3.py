@@ -31,8 +31,7 @@ def compare_bachelors_1980(data):
 
     df = data[correct_year & male_female & deg][["Sex", "Total"]]
 
-    df.groupby("Sex")["Total"].sum()
-    return df
+    return df.groupby("Sex")["Total"].sum().reset_index()
 
 
 def top_2_2000s(data, sex="A"):
@@ -47,7 +46,7 @@ def top_2_2000s(data, sex="A"):
         sex (string) = Male (m), Female (f), or default Annonymous (a)
     """
     # filter data for years between 2000 and 2010 (inclusive)
-    by_year = (data["Year"] > 2000) & (data["Year"] <= 2010)
+    by_year = (data["Year"] >= 2000) & (data["Year"] <= 2010)
     # filter by sex
     by_sex = data["Sex"] == sex
     # sort by year
@@ -66,7 +65,8 @@ def line_plot_bachelors(data):
     and title the plot Percentage Earning Bachelors over Time.
     """
     # filter data for Sex A, bachelor's
-    filtered_data = data[(data["Min degree"] == "bachelor's") & (data["Sex"] == "A")]
+    filtered_data = data[
+        (data["Min degree"] == "bachelor's") & (data["Sex"] == "A")]
     # sort data with year, min degree, and total, with previous filters
     sort_data = filtered_data.loc[:, ["Year", "Min degree", "Total"]].dropna()
     sns.relplot(data=sort_data, x="Year", y="Total", kind="line")
@@ -75,7 +75,8 @@ def line_plot_bachelors(data):
     plt.xlabel("Year")
     plt.ylabel("Percentage")
     # saving and displaying plot to plots folder in HW3
-    plt.savefig("William\\HW3\\plots\\line_plot_bachelors.png", bbox_inches="tight")
+    plt.savefig("William\\HW3\\plots\\line_plot_bachelors.png",
+                bbox_inches="tight")
 
 
 def bar_chart_high_school(data):
@@ -83,7 +84,8 @@ def bar_chart_high_school(data):
     Plots a bar chart comparing the total percentages of
     Sex F, M, and A with high school Min degree in the Year 2009
     """
-    filtered_data = data[(data["Min degree"] == "high school") & (data["Year"] == 2000)]
+    filtered_data = data[
+        (data["Min degree"] == "high school") & (data["Year"] == 2000)]
     # box plot, with "sex" having different colors
     # assiging x with 'Sex' gives us all 3 (A, M, F)
     sns.catplot(data=filtered_data, kind="bar", x="Sex", y="Total")
@@ -91,7 +93,8 @@ def bar_chart_high_school(data):
     plt.title("Percentage Completed High School by Sex")
     plt.xlabel("Sex")
     plt.ylabel("Percentage")
-    plt.savefig("William\\HW3\\plots\\bar_chart_high_school.png", bbox_inches="tight")
+    plt.savefig("William\\HW3\\plots\\bar_chart_high_school.png",
+                bbox_inches="tight")
 
 
 def plot_hispanic_min_degree(data):
@@ -122,18 +125,22 @@ def plot_hispanic_min_degree(data):
     fig, ax = plt.subplots()
 
     # Plot regression lines
-    sns.regplot(data=sort_data1, x="Year", y="Hispanic", label="Bachelor's", ax=ax)
-    sns.regplot(data=sort_data2, x="Year", y="Hispanic", label="High School", ax=ax)
+    sns.regplot(data=sort_data1, x="Year", y="Hispanic", label="Bachelor's",
+                ax=ax)
+    sns.regplot(data=sort_data2, x="Year", y="Hispanic", label="High School",
+                ax=ax)
 
     # Label axes and legend
     ax.set_ylabel("Percentage")
     ax.set_xlabel("Year")
     ax.legend()
     ax.set_xticks([1990, 1995, 2000, 2005, 2010])
-    ax.set_title("%'s of Hispanic People with High School Or Bachelor's Degrees")
+    ax.set_title(
+        "%'s of Hispanic People with High School Or Bachelor's Degrees")
 
     # Save the plot
-    plt.savefig("William/HW3/plots/plot_hispanic_min_degree.png", bbox_inches="tight")
+    plt.savefig("William/HW3/plots/plot_hispanic_min_degree.png",
+                bbox_inches="tight")
 
     # Show the plot
     plt.show()
@@ -170,10 +177,11 @@ def fit_and_predict_degrees(data):
 
 
 def main():
-    data = pd.read_csv("William\\HW3\\nces-ed-attainment.csv", na_values=["---"])
+    data = pd.read_csv("William\\HW3\\nces-ed-attainment.csv",
+                       na_values=["---"])
     sns.set_theme()
     # Call your functions here
-    # print(compare_bachelors_1980(data))
+    print(compare_bachelors_1980(data))
     # print()
     print(top_2_2000s(data, "A"))
     # line_plot_bachelors(data)
