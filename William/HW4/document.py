@@ -6,15 +6,16 @@ Intermediate Data Programming
 from cse163_utils import normalize_token
 
 
-
 class Document:
-    """_summary_
+    """
+    Represents the data in a single web page and
+    includes methods to compute term frequency
     """
     def __init__(self, path):
-        """_summary_
+        """initializes the docuemnt data
 
         Args:
-            path (_type_): _description_
+            path (str): file path
         """
         self._path_loc = path
         self._docdict = dict()
@@ -33,30 +34,28 @@ class Document:
                     self._term_counting += 1
 
     def term_frequency(self, term):
-        """_summary_
-
+        """
         Args:
-            terms (_type_): _description_
+            terms (str): term to be looked up
 
         Returns:
-            _type_: _description_
+            Term frequency of a given term by looking it up
+            in the precomputed dictionary.
         """
         if term in self._docdict:
             return self._docdict[term] / self._term_counting
         return 0
 
     def get_path(self):
-        """_summary_
-
+        """
         Returns:
-            _type_: _description_
+            The path of the file that this document represents
         """
         return self._path_loc
 
     def get_words(self):
-        """_summary_
-
+        """
         Returns:
-            _type_: _description_
+        list of the unique, normalized words in this document
         """
         return list(self._docdict)

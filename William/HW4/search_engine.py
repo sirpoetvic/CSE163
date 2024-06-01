@@ -2,10 +2,8 @@
 William Dinh
 Intermediate Data Programming
 """
-
 import os
 import math
-
 from document import Document
 from cse163_utils import normalize_token
 
@@ -14,74 +12,98 @@ class SearchEngine():
 
     def __init__(self, path):
         """Takes a string as a path, constructs an inverted index
-        associating each term in the corpus to the list of documents that contain the term
-        Do not recreate any behavior that is already done in the Document class—call the Document.get_words method!
+        associating each term in the corpus to the list of documents
+        that contain the term.Do not recreate any behavior that is
+        already done in the Document class—call the Document.get_words method!
         Create at most one Document object for each file.
 
         Args:
             path (str): file path(s) to be accessed
         """
-        self._document_scores = {}
-        self._document = Document
-        self._inverted_indexes = dict()
-        self._docs = [
-            Document(os.path.join(path, filename))
-            for filename in os.listdir(path)]
+        self._docs = []
+        self._inverted_indexes = {}
 
-        # appends to the inverted index
-        for document in self._docs:
-            for words in document.get_words():
-                if words not in self._inverted_indexes:
-                    self._inverted_indexes[words] = [document]
+        for filename in os.listdir(path):
+            file_path = os.path.join(path, filename)
+            document = Document(file_path)
+            self._docs.append(document)
+
+            for word in document.get_words():
+                normalized = normalize_token(word)
+                if normalized not in self._inverted_indexes:
+                    self._inverted_indexes[normalized] = [document]
                 else:
-                    self._inverted_indexes[words].append(document)
+                    self._inverted_indexes[normalized].append(document)
 
     def _calculate_idf(self, term):
-        word_list = self._inverted_indexes.get(normalize_token(term))
-        if word_list is not None:
-            num_docs = len(word_list)
-        else:
-            num_docs = 0
+        """
+        Calculates the Inverse Document Frequency (IDF) for a given term.
 
+        Args:
+            term (str): The term for which IDF is to be calculated.
+
+        Returns:
+            float: The IDF value of the term. If the term is not in any
+            document, returns 0.
+        """
+        normalized_term = normalize_token(term)
+        word_list = self._inverted_indexes.get(normalized_term, [])
+        num_docs = len(word_list)
+        if num_docs == 0:
+            return 0
         return math.log(len(self._docs) / num_docs)
 
     def _calculate_tf_idf(self, term, document):
-        idf = self._calculate_idf(term)
+        """
+        Calculates the Term Frequency-Inverse Document Frequency (TF-IDF)
+        for a term in a given document.
 
-        if not idf:
-            return 0
+        Args:
+            term (str): The term for which TF-IDF is to be calculated.
+            document (Document): The document in which the term's TF-IDF
+            is to be calculated.
 
-        return idf * document.term_frequency(term)
+        Returns:
+            float: The TF-IDF value of the term in the document.
+        """
+        normalized_term = normalize_token(term)
+        idf = self._calculate_idf(normalized_term)
+        tf = document.term_frequency(normalized_term)
+        return idf * tf
 
     def search(self, query):
-        terms = []
-        for term in query.split():
-            normalized_term = normalize_token(term)
-            terms.append(normalized_term)
+        """
+        Searches for the given query in the corpus and returns a list of
+        document paths sorted by relevance based on rf-idf scores.
 
+        Args:
+            query (str): The search query containing one or more terms.
+
+        Returns:
+            list: A list of document paths sorted by relevance.
+        """
+
+        terms = [normalize_token(term) for term in query.split()]
         if not terms:
             return []
 
-        # Initialize scores for all documents to 0
-        document_scores = {}
-        for document in self._docs:
-            document_scores[document] = 0
+        # initialize scores for all documents to 0
+        document_scores = {document: 0 for document in self._docs}
 
         for term in terms:
             if term in self._inverted_indexes:
                 for document in self._inverted_indexes[term]:
-                    # Calculate TF-IDF for the term in the document
-                    tf_idf = self._calculate_tf_idf(term, query)
+                    # calculate tfidf for the term in the document
+                    tf_idf = self._calculate_tf_idf(term, document)
                     document_scores[document] += tf_idf
 
-        # Sort documents by their scores in descending order
+        # sort documents by their scores in descending order
         sorted_documents = sorted(document_scores.items(),
                                   key=lambda x: x[1],
                                   reverse=True)
 
-        # Extract paths of sorted documents
-        sorted_paths = []
-        for (doc, _) in sorted_documents:
-            sorted_paths.append(doc.get_path())
+        # extract paths of sorted documents
+        sorted_paths = [doc.get_path() for doc,
+                        score in sorted_documents if score > 0]
 
         return sorted_paths
