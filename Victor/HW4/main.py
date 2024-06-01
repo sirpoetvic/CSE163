@@ -31,12 +31,5 @@ def main():
             answer = input("Would you like to search another term (y/n) ")
 
 
-def run_tests():
-    test_loader = unittest.TestLoader()
-    tests = test_loader.discover("test")
-    test_runner = unittest.runner.TextTestRunner()
-    result = test_runner.run(tests)
-
-
 if __name__ == "__main__":
     main()

@@ -6,9 +6,8 @@ SearchEngine Class
 
 import math
 import os
+from document import Document
 from cse163_utils import normalize_token
-from document import term_frequency
-from symbol import tfpdef
 
 
 class SearchEngine:
@@ -17,19 +16,18 @@ class SearchEngine:
         # Documents are in a list so that it may be iterated upon
         self._documents = list()
         # list of words, mapped to documents words are in
-        self._wordlist = dict()
+        self._inverted_index = dict()
 
-        directory = "/course/small_wiki/"
-        for filename in os.listdir(directory):
-            self._documents.append(os.path.join(directory, filename))
+        for filename in os.listdir(path):
+            self._documents.append(Document(os.path.join(path, filename)))
 
         for doc in self._documents:
             for word in doc.get_words():
                 normalized = normalize_token(word)
-                if word in self._wordlist:
-                    self._wordlist[normalized].append(doc)
+                if word in self._inverted_index:
+                    self._inverted_index[normalized].append(doc)
                 else:
-                    self._wordlist[normalized] = [doc]
+                    self._inverted_index[normalized] = [doc]
 
     def _calculate_idf(self, item: str):
         """
@@ -42,10 +40,13 @@ class SearchEngine:
         Returns:
             int: inverse document frequency
         """
-        if item not in self._wordlist:
+        if item not in self._inverted_index:
             return 0
         # logarithm total documents divided by documents with term
-        return math.log(len(self._documents) / len(self._wordlist[item]))
+        return math.log(len(self._documents) / len(self._inverted_index[item]))
+
+    def get_inverted_index(self):
+        return self._inverted_index
 
     def search(self, query: str):
         """
@@ -55,24 +56,29 @@ class SearchEngine:
         Args:
             query (str): _description_
         """
-        return_list = dict()
-        # word_tfidf = dict()
-        # for each normalized token, get the tfidf statistic
+        valid_docs = dict()
+        # normalize each token
         words = query.split()
         words = (normalize_token(token) for token in words)
-        for word in words:
-            num = self._calculate_idf(word)
-            if word in return_list:
-                return_list[word] = set(
-                    self._wordlist[word] + return_list[word]
-                )
-            else:
-                return_list[word] = [self._wordlist[word]]
-            # if word in word_tfidf:
-            #     word_tfidf[word] += num
-            # else:
-            #     word_tfidf[word] = num
-        # sort docs by tfidf statistics
 
-        # add all the tfidf statistics together
-        pass
+        # check each word
+        for word in words:
+            if word not in self._inverted_index:
+                break
+            # Calculate the tfidf per word, in a given doc
+            idf = self._calculate_idf(word)
+            for doc in self._inverted_index[word]:
+                tf = doc.term_frequency(word)
+                tfidf = tf * idf
+                if doc not in valid_docs:
+                    # Create new entry in valid_docs
+                    valid_docs[doc] = tfidf
+                else:
+                    # Add to the current tfidf for the current doc
+                    valid_docs[doc] += tfidf
+        sorted_docs_with_scores = sorted(
+            valid_docs.items(), key=lambda item: item[1], reverse=True
+        )
+        sorted_docs = [doc.get_path() for doc, _ in sorted_docs_with_scores]
+
+        return sorted_docs

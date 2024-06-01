@@ -9,7 +9,7 @@ from cse163_utils import assert_equals
 
 from document import Document
 
-# from search_engine import SearchEngine
+from search_engine import SearchEngine
 
 
 def test_term_frequency():
@@ -35,6 +35,10 @@ def test_get_words():
     )
 
 
+def test_get_inverted_index():
+    return SearchEngine("Victor\\HW4\\test_corpus").get_inverted_index()
+
+
 def main():
     # Call your test functions here!
     """
@@ -43,6 +47,7 @@ def main():
     test_term_frequency()
     test_get_path()
     test_get_words()
+    print(test_get_inverted_index())
 
 
 main()
