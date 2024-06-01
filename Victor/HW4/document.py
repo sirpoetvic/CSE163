@@ -52,8 +52,9 @@ class Document:
         Returns:
             int: number of occurences of term
         """
-        if term in self._doc_dict:
-            return self._doc_dict[term] / self._total_words
+        normalized = normalize_token(term)
+        if normalized in self._doc_dict:
+            return self._doc_dict[normalized] / self._total_words
         return 0
 
     def get_words(self) -> list:
