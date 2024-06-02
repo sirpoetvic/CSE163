@@ -4,7 +4,6 @@ Intermediate Data Programming
 """
 
 import geopandas as gpd
-from geopandas import GeoDataFrame
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -173,12 +172,50 @@ def plot_food_access_by_county(merged):
 
 
 def plot_low_access_tracts(merged):
-    """_summary_
+    """Plot low access census tracts.
 
     Args:
-        merged (_type_): _description_
+        merged (geospatial dataframe):
     """
-    
+    merge = merged[["Urban",
+                    "Rural",
+                    "POP2010",
+                    "lapophalf",
+                    "lapop10",
+                    "geometry"]]
+
+    # this is so that urban and rural can compare properly in
+    # urban_la and rural_la as i had TypeErrors there.
+    urban = merge["Urban"].astype(bool)
+    rural = merge["Rural"].astype(bool)
+
+    # Urban filters
+    urban_500_ppl = merge["lapophalf"] >= 500
+    urban_33_pct = merge["lapophalf"] / merge["POP2010"] >= 0.33
+    urban_la = urban & (urban_500_ppl | urban_33_pct)
+
+    # Rural filters
+    rural_500_ppl = merge["lapop10"] >= 500
+    rural_33_pct = merge["lapop10"] / merge["POP2010"] >= 0.33
+    rural_la = rural & (rural_500_ppl | rural_33_pct)
+
+    # Combined filter for low access
+    low_access = merge[urban_la | rural_la]
+
+    fig, ax = plt.subplots(1)
+
+    # Layer 1, background
+    merge.plot(ax=ax, color="#EEEEEE")
+
+    # Layer 2, where we have food access data
+    merge.dropna().plot(ax=ax, color="#AAAAAA")
+
+    # Layer 3, low access food
+    low_access.plot(ax=ax)
+
+    plt.title("Low Access Census Tracts")
+    # plt.show()
+    plt.savefig("low_access.png")
 
 
 def main():
@@ -186,11 +223,11 @@ def main():
         'food_access/washington.json',
         'food_access/food_access.csv'
     )
-    # print(percentage_food_data(state_data))
-    # plot_map(state_data)
-    # plot_population_map(state_data)
-    # plot_population_county_map(state_data)
-    # plot_food_access_by_county(state_data)
+    print(percentage_food_data(state_data))
+    plot_map(state_data)
+    plot_population_map(state_data)
+    plot_population_county_map(state_data)
+    plot_food_access_by_county(state_data)
     plot_low_access_tracts(state_data)
 
 
