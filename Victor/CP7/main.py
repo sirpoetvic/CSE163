@@ -47,10 +47,6 @@ def create_small_and_rich_png():
     small_and_rich.plot(
         column="GDP_MD_EST",
         legend=True,
-        legend_kwds={
-            "label": "GDP (in million USD)",
-            "orientation": "vertical",
-        },
         ax=ax,
     )
 
