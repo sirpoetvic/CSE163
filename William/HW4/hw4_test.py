@@ -84,7 +84,3 @@ def main():
     test_get_path()
     test_get_words()
     test_search_engine()
-
-
-if __name__ == "__main__":
-    main()
