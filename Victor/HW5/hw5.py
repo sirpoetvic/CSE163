@@ -6,9 +6,9 @@ import geopandas as gpd
 
 
 def main():
-    # state_data = load_in_data(
-    #     "food_access/washington.json", "food_access/food_access.csv"
-    # )
+    state_data = load_in_data(
+        "food_access/washington.json", "food_access/food_access.csv"
+    )
     # print(percentage_food_data(state_data))
     # plot_map(state_data)
     # plot_population_map(state_data)
@@ -27,26 +27,27 @@ def load_in_data(census_dataset: str, food_access_dataset: str):
         census_dataset (str): census dataset
         food_access_dataset (str): food access dataset
     """
+    zipped_folder = zip(census_dataset, food_access_dataset)
+    return zipped_folder
+
+
+def percentage_food_data(data):
     pass
 
 
-def percentage_food_data():
+def plot_map(data):
     pass
 
 
-def plot_map():
+def plot_population_map(data):
     pass
 
 
-def plot_population_map():
+def plot_population_county_map(data):
     pass
 
 
-def plot_population_county_map():
-    pass
-
-
-def plot_low_access_tracts():
+def plot_low_access_tracts(data):
     pass
 
 
