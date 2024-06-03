@@ -9,14 +9,16 @@ import matplotlib.pyplot as plt
 
 
 def load_in_data(census, food_access):
-    """_summary_
+    """
+    Preloads the data to be used in the other functions below.
 
     Args:
-        census (_type_): _description_
-        food_access (_type_): _description_
+        census (json): 2010 US census dataset
+        food_access (csv):  food access census
+        tract for every state in the country
 
     Returns:
-        _type_: _description_
+        a GeoDataFrame, which has merged the two files
     """
     census_data = gpd.read_file(census)
     food_access_data = pd.read_csv(food_access)
@@ -46,10 +48,12 @@ def percentage_food_data(merged):
 
 
 def plot_map(merged):
-    """_summary_
+    """
+        Takes merged data and plots all census tracts in WA
 
     Args:
-        merged (_type_): _description_
+        merged (GeoDataFrame): merged dataframe of
+        the census data and food access data
     """
     fig, ax = plt.subplots(1)
     merged.plot(ax=ax)
@@ -59,10 +63,12 @@ def plot_map(merged):
 
 
 def plot_population_map(merged):
-    """_summary_
+    """ Plots merged data that color coordinates each census tract,
+    according to the corresponding population.
 
     Args:
-        merged (_type_): _description_
+        merged (GeoDataFrame): merged dataframe of
+        the census data and food access data
     """
     merged = merged[["CensusTract", "POP2010", "geometry"]]
     fig, ax = plt.subplots(1)
@@ -78,10 +84,11 @@ def plot_population_map(merged):
 
 
 def plot_population_county_map(merged):
-    """_summary_
-
+    """
+        each county is plotted according to population, given the tracts
     Args:
-        merged (_type_): _description_
+        merged (GeoDataFrame): merged dataframe of
+        the census data and food access data
     """
     merge = merged[["CensusTract", "POP2010", "geometry", "County"]]
     fig, ax = plt.subplots(1)
@@ -101,10 +108,16 @@ def plot_population_county_map(merged):
 
 
 def plot_food_access_by_county(merged):
-    """_summary_
+    """
+        Shows food access accross income level with four different graphs:
+        Low Access: Half
+        Low Access + Low Income: half
+        Low Access: 10
+        Low Access + Low Income: 10
 
     Args:
-        merged (_type_): _description_
+        merged (GeoDataFrame): merged dataframe of
+        the census data and food access data
     """
     merge = merged[["CensusTract",
                     "POP2010",
@@ -172,10 +185,13 @@ def plot_food_access_by_county(merged):
 
 
 def plot_low_access_tracts(merged):
-    """Plot low access census tracts.
+    """
+    Plot low access census tracts in both rural and urban
+    environments, which are defined and calculated in the function
 
     Args:
-        merged (geospatial dataframe):
+        merged (GeoDataFrame): merged dataframe of
+        the census data and food access data
     """
     merge = merged[["Urban",
                     "Rural",
@@ -219,6 +235,10 @@ def plot_low_access_tracts(merged):
 
 
 def main():
+    """
+    Load files to be merged into load_in_data,
+    then allows us to run every function
+    """
     state_data = load_in_data(
         'food_access/washington.json',
         'food_access/food_access.csv'
