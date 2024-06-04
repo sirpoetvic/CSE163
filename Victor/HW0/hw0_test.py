@@ -4,7 +4,7 @@ UW CSE163
 Tests the functions for HW0
 """
 
-import Victor.HW0.hw0 as hw0
+import hw0
 
 from cse163_utils import assert_equals
 
