@@ -30,10 +30,27 @@ def test_count_divisible_digits():
     assert_equals(1, hw1.count_divisible_digits(-204, 5))
     assert_equals(0, hw1.count_divisible_digits(24, 5))
     assert_equals(0, hw1.count_divisible_digits(1, 0))
-    # my test
-    assert_equals(1, hw1.count_divisible_digits(123, 3))
-    assert_equals(0, hw1.count_divisible_digits(123, 4))
-    assert_equals(0, hw1.count_divisible_digits(123, 5))
+    assert_equals(4, hw1.count_divisible_digits(100002, 5))
+    assert_equals(5, hw1.count_divisible_digits(200000543534543543534, 7))
+    assert_equals(3, hw1.count_divisible_digits(222, 2))
+    assert_equals(4, hw1.count_divisible_digits(650899, 3))
+    assert_equals(1, hw1.count_divisible_digits(-204, 5))
+    assert_equals(0, hw1.count_divisible_digits(24, 5))
+    assert_equals(0, hw1.count_divisible_digits(1, 0))
+    assert_equals(0, hw1.count_divisible_digits(371293, 4))
+    assert_equals(1, hw1.count_divisible_digits(0, 4))
+    assert_equals(2, hw1.count_divisible_digits(12345, 2))
+    assert_equals(1, hw1.count_divisible_digits(12345, 4))
+    assert_equals(0, hw1.count_divisible_digits(12345, 6))
+    assert_equals(5, hw1.count_divisible_digits(11111, 1))
+    assert_equals(0, hw1.count_divisible_digits(12345, 0))
+    assert_equals(0, hw1.count_divisible_digits(2, 3))
+    assert_equals(1, hw1.count_divisible_digits(3, 3))
+    assert_equals(1, hw1.count_divisible_digits(0, 3))
+    assert_equals(10, hw1.count_divisible_digits(5555555555, 5))
+    assert_equals(0, hw1.count_divisible_digits(1111111111, 2))
+    assert_equals(1, hw1.count_divisible_digits(0, 1))
+    assert_equals(0, hw1.count_divisible_digits(1234567890, 0))
 
 
 def test_is_relatively_prime():
@@ -69,8 +86,6 @@ def test_reformat_date():
     assert_equals('3/1/2', hw1.reformat_date("1/2/3", "M/D/Y", "Y/M/D"))
     assert_equals('4/0', hw1.reformat_date("0/2000/4", "Y/D/M", "M/Y"))
     assert_equals('2', hw1.reformat_date("3/2", "M/D", "D"))
-    # add another test case
-    # add anohter test case
 
 
 def test_longest_word():
@@ -112,14 +127,15 @@ def main():
     """
     Running all the testing functions
     """
-    # test_total()
-    # test_count_divisible_digits()
-    # test_is_relatively_prime()
-    # test_travel()
-    # test_reformat_date()
+    test_total()
+    test_count_divisible_digits()
+    test_is_relatively_prime()
+    test_travel()
+    test_reformat_date()
     test_longest_word()
-    # test_get_average_in_range()
-    # test_mode_digit()
+    test_get_average_in_range()
+    test_mode_digit()
+    print("hello")
 
 
 if __name__ == '__main__':
