@@ -9,7 +9,7 @@ def parse(file_name):
     dictionaries. The list will have a dictionary for each row, and each
     dictionary will have a key for each column.
     """
-    df = pd.read_csv(f"Victor\\HW2\\{file_name}")
+    df = pd.read_csv(f"{file_name}")
     return df.to_dict("records")
 
 
@@ -26,12 +26,18 @@ def check_approx_equals(expected, received):
             # first check that keys match, then check that the
             # values approximately match
             return expected.keys() == received.keys() and all(
-                [check_approx_equals(expected[k], received[k]) for k in expected.keys()]
+                [
+                    check_approx_equals(expected[k], received[k])
+                    for k in expected.keys()
+                ]
             )
         elif type(expected) == list or type(expected) == set:
             # Checks both lists/sets contain the same values
             return len(expected) == len(received) and all(
-                [check_approx_equals(v1, v2) for v1, v2 in zip(expected, received)]
+                [
+                    check_approx_equals(v1, v2)
+                    for v1, v2 in zip(expected, received)
+                ]
             )
         elif type(expected) == float:
             return math.isclose(expected, received, abs_tol=0.001)

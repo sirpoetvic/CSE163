@@ -29,7 +29,7 @@ class Document:
         # total number of words in doc
         self._total_words = 0
 
-        with open(path) as f:
+        with open(path, encoding="utf8") as f:
             lines = f.readlines()
             for line in lines:
                 tokens = line.split()

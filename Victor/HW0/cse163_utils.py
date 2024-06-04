@@ -21,7 +21,7 @@ def check_approx_equals(expected, received):
     try:
         if type(expected) == dict:
             # first check that keys match, then check that the
-            # values approximately match
+            # values approximatesly match
             return expected.keys() == received.keys() and all(
                 [
                     check_approx_equals(expected[k], received[k])

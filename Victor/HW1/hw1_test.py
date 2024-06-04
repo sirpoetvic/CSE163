@@ -4,7 +4,7 @@ Period 5
 HW1 assignment tester file
 """
 
-import Victor.HW1.hw1 as hw1
+import hw1
 
 from cse163_utils import assert_equals
 
@@ -33,6 +33,25 @@ def test_count_divisible_digits():
     assert_equals(0, hw1.count_divisible_digits(1, 0))
     assert_equals(4, hw1.count_divisible_digits(100002, 5))
     assert_equals(5, hw1.count_divisible_digits(200000543534543543534, 7))
+    assert_equals(3, hw1.count_divisible_digits(222, 2))
+    assert_equals(4, hw1.count_divisible_digits(650899, 3))
+    assert_equals(1, hw1.count_divisible_digits(-204, 5))
+    assert_equals(0, hw1.count_divisible_digits(24, 5))
+    assert_equals(0, hw1.count_divisible_digits(1, 0))
+    assert_equals(0, hw1.count_divisible_digits(371293, 4))
+    assert_equals(1, hw1.count_divisible_digits(0, 4))
+    assert_equals(2, hw1.count_divisible_digits(12345, 2))
+    assert_equals(1, hw1.count_divisible_digits(12345, 4))
+    assert_equals(0, hw1.count_divisible_digits(12345, 6))
+    assert_equals(5, hw1.count_divisible_digits(11111, 1))
+    assert_equals(0, hw1.count_divisible_digits(12345, 0))
+    assert_equals(0, hw1.count_divisible_digits(2, 3))
+    assert_equals(1, hw1.count_divisible_digits(3, 3))
+    assert_equals(1, hw1.count_divisible_digits(0, 3))
+    assert_equals(10, hw1.count_divisible_digits(5555555555, 5))
+    assert_equals(0, hw1.count_divisible_digits(1111111111, 2))
+    assert_equals(1, hw1.count_divisible_digits(0, 1))
+    assert_equals(0, hw1.count_divisible_digits(1234567890, 0))
 
 
 def test_is_relatively_prime():
@@ -46,6 +65,14 @@ def test_is_relatively_prime():
     assert_equals(True, hw1.is_relatively_prime(8, 1))
     assert_equals(False, hw1.is_relatively_prime(2, 6))
     assert_equals(True, hw1.is_relatively_prime(1, 5))
+    assert_equals(True, hw1.is_relatively_prime(12, 13))
+    assert_equals(False, hw1.is_relatively_prime(12, 14))
+    assert_equals(True, hw1.is_relatively_prime(5, 9))
+    assert_equals(True, hw1.is_relatively_prime(8, 9))
+    assert_equals(True, hw1.is_relatively_prime(8, 1))
+    assert_equals(True, hw1.is_relatively_prime(1, 8))
+    assert_equals(False, hw1.is_relatively_prime(14, 12))
+    assert_equals(True, hw1.is_relatively_prime(15, 15))
 
 
 def test_travel():
@@ -75,6 +102,10 @@ def test_longest_word():
     assert_equals(
         "3: Merrily,",
         hw1.longest_word("song.txt"),
+    )
+    assert_equals(
+        None,
+        hw1.longest_word("blank.txt"),
     )
 
 
