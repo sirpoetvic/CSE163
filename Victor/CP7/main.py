@@ -5,6 +5,10 @@ import matplotlib.pyplot as plt
 
 
 def create_south_america_png():
+    """
+    Makes a plot of the countries in South America, colored
+    by their population
+    """
     # Load the data
     countries = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
 
@@ -31,7 +35,11 @@ def create_south_america_png():
 
 
 def create_small_and_rich_png():
-
+    """
+    Makes a plot of the world highlighting countries that are "small and rich"
+    Country is rich if its GDP is at least 500,000
+    Country is small if the population is at most 80,000,000
+    """
     countries = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
 
     # Country considered rich if the GDP is greater than 500,000
@@ -50,11 +58,17 @@ def create_small_and_rich_png():
         ax=ax,
     )
 
-    # Save graphs
+    # Save figure
     plt.savefig("small_and_rich.png")
 
 
 def create_populations_png():
+    """
+    Plots 3 axes in one figure:
+    First axis: Plots population by country
+    Second axis: Plots population aggregated by subregion
+    Third axis: Plots population aggregated by continent
+    """
     countries = gpd.read_file("geo_data/ne_110m_admin_0_countries.shp")
 
     # Filter down to just the columns of interest
@@ -73,7 +87,7 @@ def create_populations_png():
     populations_subregion.plot(column="POP_EST", legend=True, ax=ax2)
     populations_continent.plot(column="POP_EST", legend=True, ax=ax3)
 
-    # Save graphs
+    # Save figure
     plt.savefig("populations.png")
 
 
