@@ -24,28 +24,44 @@ def total(n):
         return result
 
 
-def count_divisible_digits(n, m):
+def count_divisible_digits(n: int, m: int) -> int:
+    """
+    returns the number of digits in n that are divisible
+    by m
+
+    Args:
+        n (int): number to examine digits from
+        m (int): divisor
+
+    Returns:
+        int: number of digits in n divisible by m
+    """
     if m == 0:
         return 0
-    elif n == 0:
-        return 1
-    n = abs(n)
-    if (n % 10) % m == 0:
-        return count_divisible_digits(n // 10, m) + 1
-    else:
-        return count_divisible_digits(n // 10, m)
+    n, num = abs(n), 0
+    while n > 10:
+        digit = n % 10
+        if (digit % m) == 0:
+            num += 1
+        n //= 10
+    if (n % m) == 0:
+        num = num + 1
+    return num
 
 
-def is_relatively_prime(n, m):
-    """Determines if n and m have a common factor
+def is_relatively_prime(n: int, m: int) -> bool:
+    """
+    Determines if n and m have a common factor
 
     Args:
         n (int): number 1
         m (int): number 2
 
     Returns:
-        boolean: if n and m do not have a common factor
+        bool: if n and m do not have a common factor
     """
+    if (n == m) or (n == 1) or (m == 1):
+        return True
     for i in range(2, int(max(n, m) / 2)):
         if n % i == 0 and m % i == 0:
             return False
@@ -53,7 +69,8 @@ def is_relatively_prime(n, m):
 
 
 def travel(directions, x, y):
-    """Adjusts (x, y) coordinates based on the string directions.
+    """
+    adjusts (x, y) coordinates based on the string directions.
     "n", "s", "w", and "e" upper/lower are all move the coordinates
     in their respective direction
 
@@ -96,15 +113,15 @@ def reformat_date(date, current_date_format, target_date_format):
     date_numbers = date.split("/")
 
     for i in range(len(target_date_letters)):
-        return_date += date_numbers[date_letters.index(target_date_letters[i])] + (
-            ("/" if i != len(target_date_letters) - 1 else "")
-        )
+        return_date += date_numbers[
+            date_letters.index(target_date_letters[i])
+        ] + (("/" if i != len(target_date_letters) - 1 else ""))
     return return_date
 
 
-def longest_word(file_name):
+def longest_word(file_name: str):
     """Finds the longest word in text, and the line that it came from
-    Returns 0 if the file is empty.
+    Returns None if the file is empty.
 
     Args:
         file_name (txt file): text file with words on lines
@@ -172,7 +189,8 @@ def mode_digit(n):
             greatest_num = t % 10
             greatest_occurences = occurences_dict[t % 10]
         elif (
-            occurences_dict[t % 10] == greatest_occurences and (t % 10) >= greatest_num
+            occurences_dict[t % 10] == greatest_occurences
+            and (t % 10) >= greatest_num
         ):
             greatest_num = t % 10
         t //= 10
