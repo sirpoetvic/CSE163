@@ -38,7 +38,25 @@ def duckie_hat():
     The hat brim should be a rectangle with the top-left corner at (75, 60)
     and the bottom-right corner at (90, 160).
     """
-    pass
+
+    # Read in the image
+    duck = imageio.imread("duck.jpg")
+
+    duck_copy = duck.copy()
+
+    # Main hat is a green rectangle with top-left
+    # at (20,85) bottom-right corner at (75, 135)
+    duck_copy[20:75, 85:135, 0] = 0
+    duck_copy[20:75, 85:135, 1] = 255
+    duck_copy[20:75, 85:135, 2] = 0
+
+    # Main hat is a green rectangle with top-left
+    # at (75,60) bottom-right corner at (90, 160)
+    duck_copy[75:90, 60:160, 0] = 0
+    duck_copy[75:90, 60:160, 1] = 255
+    duck_copy[75:90, 60:160, 2] = 0
+
+    return duck_copy
 
 
 def main():
