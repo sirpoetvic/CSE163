@@ -4,11 +4,6 @@ Period 5
 HW1 assignment
 """
 
-# do not import math
-
-
-from itertools import count
-
 
 def total(n):
     """
