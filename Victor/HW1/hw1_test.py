@@ -107,6 +107,7 @@ def test_longest_word():
         None,
         hw1.longest_word("blank.txt"),
     )
+    assert_equals("1: chicken", hw1.longest_word("lastest.txt"))
 
 
 def test_get_average_in_range():

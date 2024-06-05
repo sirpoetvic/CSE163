@@ -130,7 +130,7 @@ def longest_word(file_name: str):
         if len(lines) == 0:
             return None
         for line in enumerate(lines):
-            tokens = line[1].split(" ")
+            tokens = line[1].split()
             for token in tokens:
                 if len(token) > long_word_length:
                     long_line = line[0] + 1
