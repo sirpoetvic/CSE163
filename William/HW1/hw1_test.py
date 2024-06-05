@@ -96,6 +96,7 @@ def test_longest_word():
     # add another test case
     assert_equals(None, hw1.longest_word('William\\HW1\\blank.txt'))
     assert_equals('3: because', hw1.longest_word('William\\HW1\\song2.txt'))
+    assert_equals("1: chicken", hw1.longest_word("William\\HW1\\lastest.txt"))
 
 
 def test_get_average_in_range():
