@@ -1,6 +1,4 @@
-
-# TODO: Need an import statement here
-from CSE163.William.CP9.to_do.my_set import MySet
+from my_set import MySet
 
 
 def main():

@@ -20,8 +20,13 @@ def test_term_frequency():
         0.25,
         Document("William\\HW4\\test_corpus\\document2.txt").term_frequency(
             "dog"
-        ),
+        )
     )
+
+    assert_equals(7/32,
+                  Document(
+                      "William\\HW4\\test_corpus_two\\california_song.txt"
+                      ).term_frequency("california"))
 
 
 def test_get_path():
@@ -61,7 +66,7 @@ def test_search_engine():
     # search for a term that is in all documents
     result2 = engine.search("the")
     expected2 = ['William\\HW4//test_corpus_two\\doc3.txt',
-                 'William\\HW4//test_corpus_two\\doc2.txt'] 
+                 'William\\HW4//test_corpus_two\\doc2.txt']
     assert_equals(expected2, result2)
 
     # no term in doc
@@ -84,3 +89,7 @@ def main():
     test_get_path()
     test_get_words()
     test_search_engine()
+    print("it works!")
+
+
+main()

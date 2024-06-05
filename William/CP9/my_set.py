@@ -19,8 +19,36 @@ class MySet:
 
     All fields should be private.
 
-    You should not use the set class in any way in your implementation. 
+    You should not use the set class in any way in your implementation.
     You should implement MySet using a list as your hash table.
     '''
 
-    pass
+    def __init__(self):
+        """
+        Initialize the hash set
+        """
+        self._hash_table = [0] * 10
+        self._length = 0
+
+    def add(self, v):
+        """_summary_
+
+        Args:
+            v (_type_): _description_
+        """
+        hash = v % 10
+        if (v not in self) and (self._hash_table[hash] == 0):
+            self._length += 1
+            self._hash_table[hash] = v
+
+    def __contains__(self, v):
+        """
+        Args:
+            v (_type_): _description_
+        """
+        return v in self._hash_table
+
+    def __len__(self):
+        """_summary_
+        """
+        return self._length

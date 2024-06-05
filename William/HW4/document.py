@@ -21,7 +21,7 @@ class Document:
         self._docdict = dict()
         self._term_counting = 0
 
-        with open(path, 'r') as file:
+        with open(path, encoding='utf-8') as file:
             contents = file.readlines()
             for content in contents:
                 tokens = content.split()
@@ -42,8 +42,10 @@ class Document:
             Term frequency of a given term by looking it up
             in the precomputed dictionary.
         """
-        if term in self._docdict:
-            return self._docdict[term] / self._term_counting
+        normalize = normalize_token(term)
+
+        if normalize in self._docdict:
+            return self._docdict[normalize] / self._term_counting
         return 0
 
     def get_path(self):
