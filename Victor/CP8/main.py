@@ -1,4 +1,5 @@
 import imageio
+from matplotlib.animation import adjusted_figsize
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -14,7 +15,32 @@ def blur_image(file_in, file_out, kernel_size):
     of all 1's and averaged by the number of elements. For example,
     a 3x3 kernel will average the 9 elements' values.
     """
-    pass
+    image = imageio.imread(file_in)
+    num_rows, num_col, _ = image.shape
+
+    # prep the image
+    blurred_image = np.zeros_like(image)
+
+    adjusted = image * (1 / (kernel_size**2))
+
+    # check through the rows? by the length of the kernel
+    # iterate through rows
+    for row in range(num_rows - kernel_size):
+        for col in range(num_col - kernel_size):
+            for color in range(3):
+                local_total = np.sum(
+                    adjusted[
+                        row : row + kernel_size,
+                        col : col + kernel_size,
+                        color,
+                    ]
+                )
+                blurred_image[
+                    row + int(kernel_size / 2),
+                    col + int(kernel_size / 2),
+                    color,
+                ] = local_total
+    imageio.imwrite(file_out, blurred_image)
 
 
 def edge_detect(file_in, file_out, channel):
@@ -27,7 +53,31 @@ def edge_detect(file_in, file_out, channel):
     # the 3 colors (RGB), use only a single channel as the input.
     # Use the edge detection kernel of size 3x3.
     # If the resulting value <=127 then make it 0, else 255.
-    pass
+    image = imageio.imread(file_in)
+    channel_only = image[:, :, channel]
+    adjusted_image = np.zeros_like(channel_only)
+    kernel = [
+        [
+            -1,
+            -1,
+            -1,
+        ],
+        [-1, 8, -1],
+        [
+            -1,
+            -1,
+            -1,
+        ],
+    ]
+
+    num_rows, num_col, _ = image.shape
+
+    for row in range(1, num_rows - 1):
+        for col in range(1, num_col - 1):
+            region = channel_only[row - 1 : row + 2, col - 1 : col + 2]
+            num = np.sum(region * kernel)
+            adjusted_image[row, col] = 255 if num >= 127 else 0
+    imageio.imwrite(file_out, adjusted_image)
 
 
 def duckie_hat():
